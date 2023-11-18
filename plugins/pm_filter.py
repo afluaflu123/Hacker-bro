@@ -127,16 +127,18 @@ async def next_page(bot, query):
 
         btn.insert(0, 
             [
-                InlineKeyboardButton(f'⇓ {search} ⇓', 'neosub'),
-                InlineKeyboardButton(f"Fɪʟᴇs: {total_results}", "dupe")
+                InlineKeyboardButton(f'ɪɴꜰᴏ', 'reqinfo'),
+                InlineKeyboardButton(f'ᴍᴏᴠɪᴇ', 'minfo'),
+                InlineKeyboardButton(f'ꜱᴇʀɪᴇꜱ', 'sinfo')
             ]
         )
     else:
         btn = []
         btn.insert(0, 
             [               
-                InlineKeyboardButton(f'⇓ {search} ⇓', 'neosub'),
-                InlineKeyboardButton(f"Fɪʟᴇs: {total_results}", "dupe")
+                InlineKeyboardButton(f'ɪɴꜰᴏ', 'reqinfo'),
+                InlineKeyboardButton(f'ᴍᴏᴠɪᴇ', 'minfo'),
+                InlineKeyboardButton(f'ꜱᴇʀɪᴇꜱ', 'sinfo')
             ]
        )
     try:
@@ -1670,7 +1672,7 @@ async def auto_filter(client, msg, spoll=False):
         btn.insert(0, 
             [
                 InlineKeyboardButton(f'⇓ {search} ⇓', 'neosub'),
-                InlineKeyboardButton(f"🗂️ Fɪʟᴇs: {total_results}", "dupe")
+                InlineKeyboardButton(f'ɪɴꜰᴏ', 'reqinfo')
             ]
         )
     else:
@@ -1678,7 +1680,7 @@ async def auto_filter(client, msg, spoll=False):
         btn.insert(0, 
             [
                 InlineKeyboardButton(f'⇓ {search} ⇓', 'neosub'),
-                InlineKeyboardButton(f"🗂️ Fɪʟᴇs: {total_results}", "dupe")
+                InlineKeyboardButton(f'ɪɴꜰᴏ', 'reqinfo')
             ]
         )
     if offset != "":
