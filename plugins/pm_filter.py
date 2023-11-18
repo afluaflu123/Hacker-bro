@@ -127,14 +127,14 @@ async def next_page(bot, query):
 
         btn.insert(0, 
             [
-                InlineKeyboardButton(f'⍚ ᴊᴏɪɴ ᴏᴜʀ ᴍᴀɪɴ ᴄʜᴀɴɴᴇʟ ⍚', 'https://t.me/Team_KL')                
+                InlineKeyboardButton('⍚ ᴊᴏɪɴ ᴏᴜʀ ᴍᴀɪɴ ᴄʜᴀɴɴᴇʟ ⍚', url=f'https://t.me/Team_KL')                
             ]
         )
     else:
         btn = []
         btn.insert(0, 
             [               
-                InlineKeyboardButton(f'⍚ ᴊᴏɪɴ ᴏᴜʀ ᴍᴀɪɴ ᴄʜᴀɴɴᴇʟ ⍚', 'https://t.me/Team_KL')
+                InlineKeyboardButton('⍚ ᴊᴏɪɴ ᴏᴜʀ ᴍᴀɪɴ ᴄʜᴀɴɴᴇʟ ⍚', url=f'https://t.me/Team_KL')
             ]
        )
     try:
