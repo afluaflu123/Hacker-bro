@@ -13,7 +13,7 @@ from Script import script
 import pyrogram
 from database.connections_mdb import active_connection, all_connections, delete_connection, if_active, make_active, \
     make_inactive
-from info import ADMINS, AUTH_CHANNEL, AUTH_USERS, SUPPORT_CHAT_ID, CUSTOM_FILE_CAPTION, MSG_ALRT, PICS, AUTH_GROUPS, P_TTI_SHOW_OFF, GRP_LNK, CHNL_LNK, NOR_IMG, LOG_CHANNEL, SPELL_IMG, MAX_B_TN, IMDB, \
+from info import ADMINS, AUTH_CHANNEL, AUTH_USERS, NOR_IMG, SUPPORT_CHAT_ID, CUSTOM_FILE_CAPTION, MSG_ALRT, PICS, AUTH_GROUPS, P_TTI_SHOW_OFF, GRP_LNK, CHNL_LNK, NOR_IMG, LOG_CHANNEL, SPELL_IMG, MAX_B_TN, IMDB, \
     SINGLE_BUTTON, SPELL_CHECK_REPLY, IMDB_TEMPLATE, NO_RESULTS_MSG, REQ_CHANNEL, TUTORIAL, REQST_CHANNEL, IS_TUTORIAL, LANGUAGES, SEASONS, SUPPORT_CHAT, PREMIUM_USER
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery, InputMediaPhoto
 from pyrogram import Client, filters, enums
@@ -1779,7 +1779,7 @@ async def auto_filter(client, msg, spoll=False):
                 await message.delete()
         except Exception as e:
             logger.exception(e)          
-            fek = await message.reply_text(text=cap, reply_markup=InlineKeyboardMarkup(btn))
+            fek = await message.reply_photo(photo=NOR_IMG, caption=cap, reply_markup=InlineKeyboardMarkup(btn))
             try:
                 if settings['auto_delete']:
                     await asyncio.sleep(300)
@@ -1791,7 +1791,7 @@ async def auto_filter(client, msg, spoll=False):
                 await fek.delete()
                 await message.delete()
     else:
-        fuk = await message.reply_text(text=cap, reply_markup=InlineKeyboardMarkup(btn), disable_web_page_preview=True)
+        fuk = await message.reply_photo(photo=NOR_IMG, caption=cap, reply_markup=InlineKeyboardMarkup(btn), disable_web_page_preview=True)
         try:
             if settings['auto_delete']:
                 await asyncio.sleep(300)
