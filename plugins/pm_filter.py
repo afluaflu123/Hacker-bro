@@ -1207,8 +1207,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
     elif query.data == "select":
         await query.answer(text=script.SELECT, show_alert=True)
 
-    elif query.data == "sinfo":
-        await query.answer(text=script.SINFO, show_alert=True)
+    elif query.data == "info":
+        await query.answer(text=script.INFO, show_alert=True)
 
     elif query.data == "start":
         buttons = [[
@@ -1643,7 +1643,7 @@ async def auto_filter(client, msg, spoll=False):
         ]
         btn.insert(0, 
             [
-                InlineKeyboardButton(f'⇓ {search} ⇓', 'sinfo'),
+                InlineKeyboardButton(f'𝀘 {search} 𝀘', 'info'),
                 InlineKeyboardButton(f'ɪɴꜰᴏ', 'reqinfo')
             ]
         )
@@ -1651,7 +1651,7 @@ async def auto_filter(client, msg, spoll=False):
         btn = []
         btn.insert(0, 
             [
-                InlineKeyboardButton(f'⇓ {search} ⇓', 'sinfo'),
+                InlineKeyboardButton(f'𝀘 {search} 𝀘', 'info'),
                 InlineKeyboardButton(f'ɪɴꜰᴏ', 'reqinfo')
             ]
         )
