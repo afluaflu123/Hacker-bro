@@ -127,16 +127,14 @@ async def next_page(bot, query):
 
         btn.insert(0, 
             [
-                InlineKeyboardButton(f'⇓ {search} ⇓', 'neosub'),
-                InlineKeyboardButton(f'ꜰɪʟᴇs: {total}', 'dupe')
+                InlineKeyboardButton(f'⇓ {search} ⇓', 'neosub')              
             ]
         )
     else:
         btn = []
         btn.insert(0, 
             [               
-                InlineKeyboardButton(f'⇓ {search} ⇓', 'neosub'),
-                InlineKeyboardButton(f'ꜰɪʟᴇs: {total}', 'dupe')
+                InlineKeyboardButton(f'⇓ {search} ⇓', 'neosub')
             ]
        )
     try:
@@ -1669,16 +1667,14 @@ async def auto_filter(client, msg, spoll=False):
         ]
         btn.insert(0, 
             [
-                InlineKeyboardButton(f'⇓ {search} ⇓', 'neosub'),
-                InlineKeyboardButton(f'ꜰɪʟᴇs: {total}', 'dupe')
+                InlineKeyboardButton(f'⇓ {search} ⇓', 'neosub')
             ]
         )
     else:
         btn = []
         btn.insert(0, 
             [
-                InlineKeyboardButton(f'⇓ {search} ⇓', 'neosub'),
-                InlineKeyboardButton(f'ꜰɪʟᴇs: {total}', 'dupe')
+                InlineKeyboardButton(f'⇓ {search} ⇓', 'neosub')
             ]
         )
     if offset != "":
