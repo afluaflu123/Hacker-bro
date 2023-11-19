@@ -20,10 +20,6 @@ logger = logging.getLogger(__name__)
 
 BATCH_FILES = {}
 
-FBS_TXT = """<b>❗️ Please Follow This Rules ❗️\n\nYou Are Not In Our Channel Given Below So You Don't Get The Movie File. In Order To Get The Movie Requested By You\n\nYou Will Have To Join Our Main Channel First.\n\nAfter That Try Accessing That Movie Then Click On The Try Again.
-
-I'll Send You That Movie Privately.<\b>"""
-
 @Client.on_message(filters.command("start") & filters.incoming)
 async def start(client, message):
     if message.chat.type in [enums.ChatType.GROUP, enums.ChatType.SUPERGROUP]:
@@ -88,9 +84,9 @@ async def start(client, message):
             except (IndexError, ValueError):
                 btn.append([InlineKeyboardButton("↻ Tʀʏ Aɢᴀɪɴ ↻", url=f"https://t.me/{temp.U_NAME}?start={message.command[1]}")])
         await client.send_photo(
-            photo="https://telegra.ph/file/164c4c996cf73770952e2.jpg",
+            photo="https://telegra.ph/file/15e8f881b042f2e6bfdc1.jpg",
             chat_id=message.from_user.id,
-            caption=FBS_TXT,
+            caption=script.FBS_TXT,
             reply_markup=InlineKeyboardMarkup(btn),
             parse_mode=enums.ParseMode.MARKDOWN
             )
