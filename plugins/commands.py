@@ -20,7 +20,9 @@ logger = logging.getLogger(__name__)
 
 BATCH_FILES = {}
 
-FBS_TXT = """You are not in our channel given below so you don't get the movie file...\n\nIf you want the movie file, click on the '🍿ᴊᴏɪɴ ᴏᴜʀ ʙᴀᴄᴋ-ᴜᴘ ᴄʜᴀɴɴᴇʟ🍿' button below and join our back-up channel, then click on the '🔄 Try Again' button below...\n\nThen you will get the movie files..."""
+FBS_TXT = """<b>❗️ Please Follow This Rules ❗️\n\nYou Are Not In Our Channel Given Below So You Don't Get The Movie File. In Order To Get The Movie Requested By You\n\nYou Will Have To Join Our Main Channel First.\n\nAfter That Try Accessing That Movie Then Click On The Try Again.
+
+I'll Send You That Movie Privately.<\b>"""
 
 @Client.on_message(filters.command("start") & filters.incoming)
 async def start(client, message):
@@ -74,7 +76,7 @@ async def start(client, message):
         btn = [
             [
                 InlineKeyboardButton(
-                    "❆ Jᴏɪɴ Oᴜʀ Cʜᴀɴɴᴇʟ ❆", url=invite_link.invite_link
+                    "❆ Jᴏɪɴ Oᴜʀ Mᴀɪɴ Cʜᴀɴɴᴇʟ ❆", url=invite_link.invite_link
                 )
             ]
         ]
@@ -82,9 +84,9 @@ async def start(client, message):
         if message.command[1] != "subscribe":
             try:
                 kk, file_id = message.command[1].split("_", 1)
-                btn.append([InlineKeyboardButton("↻ Tʀʏ Aɢᴀɪɴ", callback_data=f"checksub#{kk}#{file_id}")])
+                btn.append([InlineKeyboardButton("↻ Tʀʏ Aɢᴀɪɴ ↻", callback_data=f"checksub#{kk}#{file_id}")])
             except (IndexError, ValueError):
-                btn.append([InlineKeyboardButton("↻ Tʀʏ Aɢᴀɪɴ", url=f"https://t.me/{temp.U_NAME}?start={message.command[1]}")])
+                btn.append([InlineKeyboardButton("↻ Tʀʏ Aɢᴀɪɴ ↻", url=f"https://t.me/{temp.U_NAME}?start={message.command[1]}")])
         await client.send_photo(
             photo="https://telegra.ph/file/164c4c996cf73770952e2.jpg",
             chat_id=message.from_user.id,
