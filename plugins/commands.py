@@ -86,7 +86,7 @@ async def start(client, message):
         await client.send_photo(
             photo="https://telegra.ph/file/15e8f881b042f2e6bfdc1.jpg",
             chat_id=message.from_user.id,
-            text="**❗️ Please Follow This Rules ❗️\n\nYou Are Not In Our Channel Given Below So You Don't Get The Movie File. In Order To Get The Movie Requested By You\n\nYou Will Have To Join Our Main Channel First.After That Try Accessing That Movie Then Click On The Try Again.\n\nI'll Send You That Movie Privately.**",
+            caption="**❗️ Please Follow This Rules ❗️\n\nYou Are Not In Our Channel Given Below So You Don't Get The Movie File. In Order To Get The Movie Requested By You\n\nYou Will Have To Join Our Main Channel First.After That Try Accessing That Movie Then Click On The Try Again.\n\nI'll Send You That Movie Privately.**",
             reply_markup=InlineKeyboardMarkup(btn),
             parse_mode=enums.ParseMode.MARKDOWN
             )
