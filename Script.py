@@ -213,6 +213,16 @@ IMDb Data:
 📆 Year: <a href={url}/releaseinfo>{year}</a>
 ⏱️ Result Shown in: {remaining_seconds} <i>seconds</i> 🔥
 🌟 Rating: <a href={url}/ratings>{rating}</a> / 10</b>"""
+
+    FBS_TXT = """<b>❗️ Please Follow This Rules ❗
+    
+You Are Not In Our Channel Given Below So You Don't Get The Movie File. In Order To Get The Movie Requested By You
+
+You Will Have To Join Our Main Channel First.
+
+After That Try Accessing That Movie Then Click On The Try Again.
+
+I'll Send You That Movie Privately.</b>"""
     
     ALL_FILTERS = """
 <b>Hᴇʏ {}, Tʜᴇsᴇ ᴀʀᴇ ᴍʏ ᴛʜʀᴇᴇ ᴛʏᴘᴇs ᴏғ ғɪʟᴛᴇʀs.</b>"""
