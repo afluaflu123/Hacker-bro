@@ -560,7 +560,6 @@ async def filter_seasons_cb_handler(client: Client, query: CallbackQuery):
                 
 @Client.on_callback_query()
 async def cb_handler(client: Client, query: CallbackQuery):
-    message = query.message
     try:
         link = await client.create_chat_invite_link(int(REQST_CHANNEL))
     except:
@@ -1356,22 +1355,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
         )
-    elif query.data == "malspell":
-        btn = [[
-            InlineKeyboardButton("ɢᴏᴏɢʟᴇ", url=f"https://www.google.com/search?q={message}"),
-            InlineKeyboardButton("ɪᴍᴅʙ", url=f"https://www.imdb.com/find/?q={message}_=nv_sr_sm")     
-        ],[
-            InlineKeyboardButton("🇺🇸 ᴛʀᴀɴsʟᴀᴛᴇ ᴛᴏ ᴇɴɢʟɪꜱʜ 🇺🇸", callback_data="engspell")
-        ]]
-        await query.message.edit_text(script.MAL_REP, reply_markup=InlineKeyboardMarkup(btn))
-    elif query.data == "engspell":
-        btn = [[
-            InlineKeyboardButton("ɢᴏᴏɢʟᴇ", url=f"https://www.google.com/search?q={message}"),
-            InlineKeyboardButton("ɪᴍᴅʙ", url=f"https://www.imdb.com/find/?q={message}_=nv_sr_sm")     
-        ],[
-            InlineKeyboardButton("🇮🇳 ᴛʀᴀɴsʟᴀᴛᴇ ᴛᴏ ᴍᴀʟᴀʏᴀʟᴀᴍ 🇮🇳", callback_data="malspell")
-        ]] 
-        await query.message.edit_text(script.SPELL_IMG, reply_markup=InlineKeyboardMarkup(btn))
     elif query.data == "stats":
         buttons = [[
             InlineKeyboardButton('⟸ Bᴀᴄᴋ', callback_data='help'),
@@ -1765,7 +1748,7 @@ async def advantage_spell_chok(client, msg):
                        InlineKeyboardButton("ɢᴏᴏɢʟᴇ", url=f"https://www.google.com/search?q={reqst_gle}"),
                        InlineKeyboardButton("ɪᴍᴅʙ", url=f"https://www.imdb.com/find/?q={reqst_gle}_=nv_sr_sm")     
                    ],[
-                      InlineKeyboardButton("🇮🇳 ᴛʀᴀɴsʟᴀᴛᴇ ᴛᴏ ᴍᴀʟᴀʏᴀʟᴀᴍ 🇮🇳", callback_data="malspell")            
+                      InlineKeyboardButton("ᴛʀᴀɴsʟᴀᴛᴇ ᴛᴏ ᴍᴀʟᴀʏᴀʟᴀᴍ", url=f"https://telegra.ph/Translate-To-Malayalam-11-20")            
             ]]
             if NO_RESULTS_MSG:
                 await client.send_message(chat_id=LOG_CHANNEL, text=(script.NORSLTS.format(reqstr.id, reqstr.mention, mv_rqst)))
@@ -1807,7 +1790,7 @@ async def advantage_spell_chok(client, msg):
                       InlineKeyboardButton("ɢᴏᴏɢʟᴇ", url=f"https://www.google.com/search?q={reqst_gle}"),
                       InlineKeyboardButton("ɪᴍᴅʙ", url=f"https://www.imdb.com/find/?q={reqst_gle}_=nv_sr_sm")     
                    ],[
-                      InlineKeyboardButton("🇮🇳 ᴛʀᴀɴsʟᴀᴛᴇ ᴛᴏ ᴍᴀʟᴀʏᴀʟᴀᴍ 🇮🇳", callback_data="malspell")            
+                      InlineKeyboardButton("ᴛʀᴀɴsʟᴀᴛᴇ ᴛᴏ ᴍᴀʟᴀʏᴀʟᴀᴍ", url=f"https://telegra.ph/Translate-To-Malayalam-11-20")            
             ]]
             if NO_RESULTS_MSG:
                 await client.send_message(chat_id=LOG_CHANNEL, text=(script.NORSLTS.format(reqstr.id, reqstr.mention, mv_rqst)))
@@ -1854,7 +1837,7 @@ async def advantage_spell_chok(client, msg):
                        InlineKeyboardButton("ɢᴏᴏɢʟᴇ", url=f"https://www.google.com/search?q={reqst_gle}"),
                        InlineKeyboardButton("ɪᴍᴅʙ", url=f"https://www.imdb.com/find/?q={reqst_gle}_=nv_sr_sm")     
                    ],[
-                      InlineKeyboardButton("🇮🇳 ᴛʀᴀɴsʟᴀᴛᴇ ᴛᴏ ᴍᴀʟᴀʏᴀʟᴀᴍ 🇮🇳", callback_data="malspell")            
+                      InlineKeyboardButton("ᴛʀᴀɴsʟᴀᴛᴇ ᴛᴏ ᴍᴀʟᴀʏᴀʟᴀᴍ", url=f"https://telegra.ph/Translate-To-Malayalam-11-20")            
             ]]
             if NO_RESULTS_MSG:
                 await client.send_message(chat_id=LOG_CHANNEL, text=(script.NORSLTS.format(reqstr.id, reqstr.mention, mv_rqst)))
@@ -1874,7 +1857,7 @@ async def advantage_spell_chok(client, msg):
                        InlineKeyboardButton("ɢᴏᴏɢʟᴇ", url=f"https://www.google.com/search?q={reqst_gle}"),
                        InlineKeyboardButton("ɪᴍᴅʙ", url=f"https://www.imdb.com/find/?q={reqst_gle}_=nv_sr_sm")     
                    ],[
-                      InlineKeyboardButton("🇮🇳 ᴛʀᴀɴsʟᴀᴛᴇ ᴛᴏ ᴍᴀʟᴀʏᴀʟᴀᴍ 🇮🇳", callback_data="malspell")            
+                      InlineKeyboardButton("ᴛʀᴀɴsʟᴀᴛᴇ ᴛᴏ ᴍᴀʟᴀʏᴀʟᴀᴍ", url=f"https://telegra.ph/Translate-To-Malayalam-11-20")            
             ]]
             if NO_RESULTS_MSG:
                 await client.send_message(chat_id=LOG_CHANNEL, text=(script.NORSLTS.format(reqstr.id, reqstr.mention, mv_rqst)))
@@ -1907,14 +1890,14 @@ async def advantage_spell_chok(client, msg):
         )
         try:
             if settings['auto_delete']:
-                await asyncio.sleep(600)
+                await asyncio.sleep(60)
                 await spell_check_del.delete()
         except KeyError:
                 grpid = await active_connection(str(msg.from_user.id))
                 await save_group_settings(grpid, 'auto_delete', True)
                 settings = await get_settings(msg.chat.id)
                 if settings['auto_delete']:
-                    await asyncio.sleep(200)
+                    await asyncio.sleep(20)
                     await spell_check_del.delete()
 
 async def manual_filters(client, message, text=False):
