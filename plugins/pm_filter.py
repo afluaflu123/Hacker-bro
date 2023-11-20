@@ -560,6 +560,7 @@ async def filter_seasons_cb_handler(client: Client, query: CallbackQuery):
                 
 @Client.on_callback_query()
 async def cb_handler(client: Client, query: CallbackQuery):
+    message = query.message
     try:
         link = await client.create_chat_invite_link(int(REQST_CHANNEL))
     except:
@@ -1357,19 +1358,20 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "malspell":
         btn = [[
-            InlineKeyboardButton('🔍 ɢᴏᴏɢʟᴇ 🔎', url=f'https://google.com/search?q='),
-            InlineKeyboardButton(' 🔍 ʏᴀɴᴅᴇx 🔎', url=f'https://yandex.com/search?text=')
+            InlineKeyboardButton("ɢᴏᴏɢʟᴇ", url=f"https://www.google.com/search?q={message}"),
+            InlineKeyboardButton("ɪᴍᴅʙ", url=f"https://www.imdb.com/find/?q={message}_=nv_sr_sm")     
         ],[
             InlineKeyboardButton("🇺🇸 ᴛʀᴀɴsʟᴀᴛᴇ ᴛᴏ ᴇɴɢʟɪꜱʜ 🇺🇸", callback_data="engspell")
         ]]
         await query.message.edit_text(script.MAL_REP, reply_markup=InlineKeyboardMarkup(btn))
     elif query.data == "engspell":
         btn = [[
-            InlineKeyboardButton('🔍 ɢᴏᴏɢʟᴇ 🔎', url=f'https://google.com/search?q='),
-            InlineKeyboardButton(' 🔍 ʏᴀɴᴅᴇx 🔎', url=f'https://yandex.com/search?text=')
+            InlineKeyboardButton("ɢᴏᴏɢʟᴇ", url=f"https://www.google.com/search?q={message}"),
+            InlineKeyboardButton("ɪᴍᴅʙ", url=f"https://www.imdb.com/find/?q={message}_=nv_sr_sm")     
         ],[
             InlineKeyboardButton("🇮🇳 ᴛʀᴀɴsʟᴀᴛᴇ ᴛᴏ ᴍᴀʟᴀʏᴀʟᴀᴍ 🇮🇳", callback_data="malspell")
         ]] 
+        await query.message.edit_text(script.SPELL_IMG, reply_markup=InlineKeyboardMarkup(btn))
     elif query.data == "stats":
         buttons = [[
             InlineKeyboardButton('⟸ Bᴀᴄᴋ', callback_data='help'),
@@ -1760,8 +1762,8 @@ async def advantage_spell_chok(client, msg):
         if not g_s:
             reqst_gle = query.replace(" ", "+")
             button = [[
-                       InlineKeyboardButton("Gᴏᴏɢʟᴇ", url=f"https://www.google.com/search?q={reqst_gle}"),
-                       InlineKeyboardButton("Iᴍᴅʙ", url=f"https://www.imdb.com/find/?q={reqst_gle}_=nv_sr_sm")     
+                       InlineKeyboardButton("ɢᴏᴏɢʟᴇ", url=f"https://www.google.com/search?q={reqst_gle}"),
+                       InlineKeyboardButton("ɪᴍᴅʙ", url=f"https://www.imdb.com/find/?q={reqst_gle}_=nv_sr_sm")     
                    ],[
                       InlineKeyboardButton("🇮🇳 ᴛʀᴀɴsʟᴀᴛᴇ ᴛᴏ ᴍᴀʟᴀʏᴀʟᴀᴍ 🇮🇳", callback_data="malspell")            
             ]]
@@ -1772,7 +1774,7 @@ async def advantage_spell_chok(client, msg):
                 caption=script.I_CUDNT.format(mv_rqst),
                 reply_markup=InlineKeyboardMarkup(button)
             )
-            await asyncio.sleep(50)
+            await asyncio.sleep(100)
             await k.delete()
             await msg.delete()
             return
@@ -1802,8 +1804,8 @@ async def advantage_spell_chok(client, msg):
         if not movielist:
             reqst_gle = query.replace(" ", "+")
             button = [[
-                      InlineKeyboardButton("Gᴏᴏɢʟᴇ", url=f"https://www.google.com/search?q={reqst_gle}"),
-                      InlineKeyboardButton("Iᴍᴅʙ", url=f"https://www.imdb.com/find/?q={reqst_gle}_=nv_sr_sm")     
+                      InlineKeyboardButton("ɢᴏᴏɢʟᴇ", url=f"https://www.google.com/search?q={reqst_gle}"),
+                      InlineKeyboardButton("ɪᴍᴅʙ", url=f"https://www.imdb.com/find/?q={reqst_gle}_=nv_sr_sm")     
                    ],[
                       InlineKeyboardButton("🇮🇳 ᴛʀᴀɴsʟᴀᴛᴇ ᴛᴏ ᴍᴀʟᴀʏᴀʟᴀᴍ 🇮🇳", callback_data="malspell")            
             ]]
@@ -1814,7 +1816,7 @@ async def advantage_spell_chok(client, msg):
                 caption=script.I_CUDNT.format(mv_rqst),
                 reply_markup=InlineKeyboardMarkup(button)
             )
-            await asyncio.sleep(50)
+            await asyncio.sleep(100)
             await k.delete()
             await msg.delete()
             return
@@ -1849,8 +1851,8 @@ async def advantage_spell_chok(client, msg):
             logger.exception(e)
             reqst_gle = mv_rqst.replace(" ", "+")
             button = [[
-                       InlineKeyboardButton("Gᴏᴏɢʟᴇ", url=f"https://www.google.com/search?q={reqst_gle}"),
-                       InlineKeyboardButton("Iᴍᴅʙ", url=f"https://www.imdb.com/find/?q={reqst_gle}_=nv_sr_sm")     
+                       InlineKeyboardButton("ɢᴏᴏɢʟᴇ", url=f"https://www.google.com/search?q={reqst_gle}"),
+                       InlineKeyboardButton("ɪᴍᴅʙ", url=f"https://www.imdb.com/find/?q={reqst_gle}_=nv_sr_sm")     
                    ],[
                       InlineKeyboardButton("🇮🇳 ᴛʀᴀɴsʟᴀᴛᴇ ᴛᴏ ᴍᴀʟᴀʏᴀʟᴀᴍ 🇮🇳", callback_data="malspell")            
             ]]
@@ -1861,7 +1863,7 @@ async def advantage_spell_chok(client, msg):
                 caption=script.I_CUDNT.format(mv_rqst),
                 reply_markup=InlineKeyboardMarkup(button)
             )
-            await asyncio.sleep(50)
+            await asyncio.sleep(100)
             await k.delete()
             await msg.delete()
             return
@@ -1869,8 +1871,8 @@ async def advantage_spell_chok(client, msg):
         if not movies:
             reqst_gle = mv_rqst.replace(" ", "+")
             button = [[
-                       InlineKeyboardButton("Gᴏᴏɢʟᴇ", url=f"https://www.google.com/search?q={reqst_gle}"),
-                       InlineKeyboardButton("Iᴍᴅʙ", url=f"https://www.imdb.com/find/?q={reqst_gle}_=nv_sr_sm")     
+                       InlineKeyboardButton("ɢᴏᴏɢʟᴇ", url=f"https://www.google.com/search?q={reqst_gle}"),
+                       InlineKeyboardButton("ɪᴍᴅʙ", url=f"https://www.imdb.com/find/?q={reqst_gle}_=nv_sr_sm")     
                    ],[
                       InlineKeyboardButton("🇮🇳 ᴛʀᴀɴsʟᴀᴛᴇ ᴛᴏ ᴍᴀʟᴀʏᴀʟᴀᴍ 🇮🇳", callback_data="malspell")            
             ]]
@@ -1881,7 +1883,7 @@ async def advantage_spell_chok(client, msg):
                 caption=script.I_CUDNT.format(mv_rqst),
                 reply_markup=InlineKeyboardMarkup(button)
             )
-            await asyncio.sleep(50)
+            await asyncio.sleep(100)
             await k.delete()
             await msg.delete()
             return
