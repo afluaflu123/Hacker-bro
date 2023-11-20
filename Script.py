@@ -125,9 +125,7 @@ Nᴀᴍᴇ - {}"""
     CUDNT_FND = """ɪ ᴄᴏᴜʟᴅɴ'ᴛ ꜰɪɴᴅ ᴀɴʏᴛʜɪɴɢ ʀᴇʟᴀᴛᴇᴅ ᴛᴏ {}
 ᴅɪᴅ ʏᴏᴜ ᴍᴇᴀɴ ᴀɴʏ ᴏɴᴇ ᴏꜰ ᴛʜᴇꜱᴇ?"""
 
-    I_CUDNT = """<b>Sorry No Files Found {}
-
-Use The Button Below To Search On Google Or IMDB And Copy The Correct Movie Name And Paste. Don't Ask Movies That Are Not Released In OTT Platform..!!
+    I_CUDNT = """<b>Use The Button Below To Search On Google Or IMDB And Copy The Correct Movie Name And Paste. Don't Ask Movies That Are Not Released In OTT Platform..!!
 
 Try To Ask In [Moviename, Year, Language] This Format..!! 
 
