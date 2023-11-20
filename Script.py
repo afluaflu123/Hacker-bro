@@ -12,7 +12,7 @@ class script(object):
 <b>✯ Uᴘᴅᴀᴛᴇs : <a href=https://t.me/TeamHMT_Bots>TT Bot Updates 👾</a></b>
 <b>✯ Bᴜɪʟᴅ Sᴛᴀᴛᴜs : ᴠ2.0.62 [Sᴛᴀʙʟᴇ]</b>"""
 
-    SOURCE_TXT = """<b>Tʜɪꜱ Bᴏᴛ Iꜱ Nᴏᴛ Aɴ Oᴘᴇɴ Sᴏᴜʀᴄᴇ Pʀᴏᴊᴇᴄᴛ
+    SOURCE_TXT = """<b>Tʜɪꜱ Nᴏᴛ Aɴ Oᴘᴇɴ Sᴏᴜʀᴄᴇ Pʀᴏᴊᴇᴄᴛ
 
  Sᴏᴜʀᴄᴇ Cᴏᴅᴇ ~ <u>Pʀɪᴠᴀᴛᴇ</u> Sᴏʀʀʏ Bʀᴏ 😁</b>"""
 
