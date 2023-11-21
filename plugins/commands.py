@@ -50,7 +50,7 @@ async def start(client, message):
                     InlineKeyboardButton('➕ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ➕', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
                 ],[
                     InlineKeyboardButton('🔍 sᴇᴀʀᴄʜ ʜᴇʀᴇ', switch_inline_query_current_chat=''),
-                    InlineKeyboardButton('🎌 ʙᴏᴛ ᴏᴡɴᴇʀ', url=GRP_LNK)
+                    InlineKeyboardButton('🎌 ʙᴏᴛ ᴏᴡɴᴇʀ', callback_data='owner_info')
                 ],[
                     InlineKeyboardButton('🪄 ʜᴇʟᴘ', callback_data='help'),
                     InlineKeyboardButton('⚒ ᴀʙᴏᴜᴛ', callback_data='about')
@@ -99,7 +99,7 @@ async def start(client, message):
                     InlineKeyboardButton('➕ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ➕', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
                 ],[
                     InlineKeyboardButton('🔍 sᴇᴀʀᴄʜ ʜᴇʀᴇ', switch_inline_query_current_chat=''),
-                    InlineKeyboardButton('🎌 ʙᴏᴛ ᴏᴡɴᴇʀ', url=GRP_LNK)
+                    InlineKeyboardButton('🎌 ʙᴏᴛ ᴏᴡɴᴇʀ', callback_data='owner_info')
                 ],[
                     InlineKeyboardButton('🪄 ʜᴇʟᴘ', callback_data='help'),
                     InlineKeyboardButton('⚒ ᴀʙᴏᴜᴛ', callback_data='about')
