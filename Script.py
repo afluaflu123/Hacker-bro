@@ -125,7 +125,8 @@ Try To Ask In [Moviename, Year, Language] This Format..!!
 
 <u>Movie & Series Ask Format</u>
 
-Eg :-  Joker Or Joker 2019 Or Joker English & One Piece S01 or One Piece S05E04
+Movie :- Joker 2019 Or Joker English 
+Series :- Loki S01 or One Piece S02E01
 
 🚯 Don't Use ➠ ':(!,./) 🚯</b>"""
 
