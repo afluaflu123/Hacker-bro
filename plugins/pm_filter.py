@@ -1122,7 +1122,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await query.answer(text=script.REQINFO, show_alert=True)
 
     elif query.data == "money": 
-        await query.answer(f"✯ ᴏᴘᴇɴɪɴɢ sᴏᴏɴ 🥳 \n\n➠ Team KL",show_alert=True)
+        await query.answer(f"✯ 𝙏𝙝𝙞𝙨 𝘽𝙪𝙩𝙩𝙤𝙣 𝙇𝙤𝙘𝙠𝙚𝙙 🔒",show_alert=True)
         
     elif query.data == "select":
         await query.answer(text=script.SELECT, show_alert=True)
