@@ -1295,11 +1295,10 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('⇚ ʙᴀᴄᴋ​', callback_data='help')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
-        await query.message.edit_text(
-            text=script.FILE_STORE_TXT,
-            reply_markup=reply_markup,
-            parse_mode=enums.ParseMode.HTML
-        )
+        if query.from_user.id in ADMINS:
+            await query.message.edit_text(text=script.FILE_STORE_TXT, reply_markup=reply_markup, parse_mode=enums.ParseMode.HTML)
+        else:
+            await query.answer("𝘾𝙪𝙧𝙧𝙚𝙣𝙩𝙡𝙮 𝘿𝙞𝙨𝙖𝙗𝙡𝙚𝙙 🤭", show_alert=True)  
     elif query.data == "admin":
         buttons = [[
             InlineKeyboardButton('⇚ ʙᴀᴄᴋ​', callback_data='extra')
