@@ -1189,6 +1189,9 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('ᴄᴏɴɴᴇᴄᴛɪᴏɴ', callback_data='coct'),
             InlineKeyboardButton('ᴇxᴛʀᴀ ᴍᴏᴅs', callback_data='extra')
         ], [
+            InlineKeyboardButton('ʀᴜʟᴇs', callback_data='rule_btn'),
+            InlineKeyboardButton('sᴇᴛᴛɪɴɢs', callback_data='setting_btn')
+        ], [
             InlineKeyboardButton('ʜᴏᴍᴇ', callback_data='start'),
             InlineKeyboardButton('sᴛᴀᴛᴜs', callback_data='stats')
         ]]        
@@ -1275,6 +1278,25 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
         )
+    elif query.data == "setting_btn":
+        buttons = [[
+            InlineKeyboardButton('⇋ ʙᴀᴄᴋ', callback_data='help2')
+        ]]
+        reply_markup = InlineKeyboardMarkup(buttons)
+        await query.message.edit_text(
+            text=script.SETTING_TXT,
+            reply_markup=reply_markup,
+            parse_mode=enums.ParseMode.HTML
+        )
+    elif query.data == "rule_btn":
+        buttons = [[
+            InlineKeyboardButton('⇋ ʙᴀᴄᴋ', callback_data='help2')
+        ]]
+        reply_markup = InlineKeyboardMarkup(buttons)
+        await query.message.edit_text(
+            text=script.RULE_TXT,
+            reply_markup=reply_markup,
+            pa
     elif query.data == "owner_info":
         buttons = [[
             InlineKeyboardButton('⇚ ʙᴀᴄᴋ​', callback_data='start'),            
