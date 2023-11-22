@@ -1201,8 +1201,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('ᴀᴅᴍɪɴ ᴘᴀɴᴇʟ', callback_data='admin')
         ], [
             InlineKeyboardButton('ʀᴜʟᴇs', callback_data='rule_btn'),          
-            InlineKeyboardButton('ᴍɪsᴄ', callback_data='extra'),
-            InlineKeyboardButton('ɪᴍᴅʙ', callback_data='imdbmod')
+            InlineKeyboardButton('ᴇxᴛʀᴀ ᴍᴏᴅs', callback_data='extra')
         ], [
             InlineKeyboardButton('⇚ ʜᴏᴍᴇ', callback_data='start'),
             InlineKeyboardButton('sᴇᴛᴛɪɴɢs', callback_data='setting_btn')
@@ -1334,7 +1333,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             await query.answer("𝘾𝙪𝙧𝙧𝙚𝙣𝙩𝙡𝙮 𝘿𝙞𝙨𝙖𝙗𝙡𝙚𝙙 🤭", show_alert=True)  
     elif query.data == "admin":
         buttons = [[
-            InlineKeyboardButton('⇚ ʙᴀᴄᴋ​', callback_data='extra')
+            InlineKeyboardButton('⇚ ʙᴀᴄᴋ​', callback_data='help')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         if query.from_user.id in ADMINS:
@@ -1513,6 +1512,16 @@ async def auto_filter(client, msg, spoll=False):
             return
         if len(message.text) < 100:
             search = message.text
+            find = search.split(" ")
+            search = ""
+            removes = ["in","upload", "series", "full", "horror", "thriller", "mystery", "print", "file"]
+            for x in find:
+                if x in removes:
+                    continue
+                else:
+                    search = search + x + " "
+            search = re.sub(r"\b(pl(i|e)*?(s|z+|ease|se|ese|(e+)s(e)?)|((send|snd|giv(e)?|gib)(\sme)?)|movie(s)?|new|latest|bro|bruh|broh|helo|that|find|dubbed|link|venum|iruka|pannunga|pannungga|anuppunga|anupunga|anuppungga|anupungga|film|undo|kitti|kitty|tharu|kittumo|kittum|movie|any(one)|with\ssubtitle(s)?)", "", search, flags=re.IGNORECASE)
+            search = re.sub(r"\s+", " ", search).strip()
             files, offset, total_results = await get_search_results(message.chat.id ,search, offset=0, filter=True)
             if not files:
                 if settings["spell_check"]:
