@@ -112,16 +112,28 @@ async def next_page(bot, query):
 
         btn.insert(0, 
             [
-                InlineKeyboardButton('⍚ ᴊᴏɪɴ ᴏᴜʀ ᴍᴀɪɴ ᴄʜᴀɴɴᴇʟ ⍚', url=f'https://t.me/Team_KL')                
+                InlineKeyboardButton(f'𝀘 {search} 𝀘', 'info'),
+                InlineKeyboardButton(f'ɪɴꜰᴏ', 'reqinfo')                
             ]
         )
+        btn.insert(0, [
+            InlineKeyboardButton(f'sᴇʟᴇᴄᴛ⇛', 'select'),
+            InlineKeyboardButton("ʟᴀɴɢᴜᴀɢᴇs", callback_data=f"languages#{key}"),
+            InlineKeyboardButton("sᴇᴀsᴏɴs", callback_data=f"seasons#{key}")
+        ])
     else:
         btn = []
         btn.insert(0, 
             [               
-                InlineKeyboardButton('⍚ ᴊᴏɪɴ ᴏᴜʀ ᴍᴀɪɴ ᴄʜᴀɴɴᴇʟ ⍚', url=f'https://t.me/Team_KL')
+                InlineKeyboardButton(f'𝀘 {search} 𝀘', 'info'),
+                InlineKeyboardButton(f'ɪɴꜰᴏ', 'reqinfo')
             ]
-       )
+        )
+        btn.insert(0, [
+            InlineKeyboardButton(f'sᴇʟᴇᴄᴛ⇛', 'select'),
+            InlineKeyboardButton("ʟᴀɴɢᴜᴀɢᴇs", callback_data=f"languages#{key}"),
+            InlineKeyboardButton("sᴇᴀsᴏɴs", callback_data=f"seasons#{key}")
+        ])
     try:
         if settings['max_btn']:
             if 0 < offset <= 10:
@@ -274,13 +286,13 @@ async def languages_cb_handler(client: Client, query: CallbackQuery):
         0,
         [
             InlineKeyboardButton(
-                text="👇 𝖲𝖾𝗅𝖾𝖼𝗍 𝖸𝗈𝗎𝗋 𝖫𝖺𝗇𝗀𝗎𝖺𝗀𝖾𝗌 👇", callback_data="ident"
+                text="sᴇʟᴇᴄᴛ ʏᴏᴜʀ ᴅᴇsɪʀᴇᴅ ʟᴀɴɢᴜᴀɢᴇs", callback_data="ident"
             )
         ],
     )
     req = query.from_user.id
     offset = 0
-    btn.append([InlineKeyboardButton(text="↭ ʙᴀᴄᴋ ᴛᴏ ꜰɪʟᴇs ​↭", callback_data=f"fl#homepage#{key}")])
+    btn.append([InlineKeyboardButton(text="⇚ ʙᴀᴄᴋ ᴛᴏ ғɪʟᴇs ⇛", callback_data=f"fl#homepage#{key}")])
 
     await query.edit_message_reply_markup(InlineKeyboardMarkup(btn))
     
@@ -302,7 +314,7 @@ async def filter_languages_cb_handler(client: Client, query: CallbackQuery):
     try:
         if int(req) not in [query.message.reply_to_message.from_user.id, 0]:
             return await query.answer(
-                f"⚠️ ʜᴇʟʟᴏ{query.from_user.first_name},\nᴛʜɪꜱ ɪꜱ ɴᴏᴛ ʏᴏᴜʀ ᴍᴏᴠɪᴇ ʀᴇQᴜᴇꜱᴛ,\nʀᴇQᴜᴇꜱᴛ ʏᴏᴜʀ'ꜱ...",
+                f"ʜᴇʟʟᴏ{query.from_user.first_name},\nᴛʜɪꜱ ɪꜱ ɴᴏᴛ ʏᴏᴜʀ ᴍᴏᴠɪᴇ ʀᴇqᴜᴇꜱᴛ, ʏᴏᴜʀ'ꜱ...",
                 show_alert=True,
             )
     except:
@@ -313,7 +325,7 @@ async def filter_languages_cb_handler(client: Client, query: CallbackQuery):
 
     files, offset, total_results = await get_search_results(chat_id, search, offset=0, filter=True)
     if not files:
-        await query.answer("🚫 𝗡𝗼 𝗙𝗶𝗹𝗲 𝗪𝗲𝗿𝗲 𝗙𝗼𝘂𝗻𝗱 🚫", show_alert=1)
+        await query.answer("sᴏʀʀʏ ɴᴏ ғɪʟᴇs ᴡᴇʀᴇ ғᴏᴜɴᴅ 🥺", show_alert=1)
         return
     temp.GETALL[key] = files
     settings = await get_settings(message.chat.id)
@@ -392,7 +404,6 @@ async def filter_languages_cb_handler(client: Client, query: CallbackQuery):
     await query.answer()
     
     
-    
 @Client.on_callback_query(filters.regex(r"^seasons#"))
 async def seasons_cb_handler(client: Client, query: CallbackQuery):
 
@@ -431,13 +442,13 @@ async def seasons_cb_handler(client: Client, query: CallbackQuery):
         0,
         [
             InlineKeyboardButton(
-                text="👇 𝖲𝖾𝗅𝖾𝖼𝗍 Season 👇", callback_data="ident"
+                text="sᴇʟᴇᴄᴛ ʏᴏᴜʀ ᴅᴇsɪʀᴇᴅ sᴇᴀsᴏɴs", callback_data="ident"
             )
         ],
     )
     req = query.from_user.id
     offset = 0
-    btn.append([InlineKeyboardButton(text="↭ ʙᴀᴄᴋ ᴛᴏ ꜰɪʟᴇs ​↭", callback_data=f"next_{req}_{key}_{offset}")])
+    btn.append([InlineKeyboardButton(text="⇚ ʙᴀᴄᴋ ᴛᴏ ғɪʟᴇs ⇛", callback_data=f"next_{req}_{key}_{offset}")])
 
     await query.edit_message_reply_markup(InlineKeyboardMarkup(btn))
 
@@ -499,7 +510,7 @@ async def filter_seasons_cb_handler(client: Client, query: CallbackQuery):
         files.extend(files2)
         
     if not files:
-        await query.answer("🚫 𝗡𝗼 𝗙𝗶𝗹𝗲 𝗪𝗲𝗿𝗲 𝗙𝗼𝘂𝗻𝗱 🚫", show_alert=1)
+        await query.answer("sᴏʀʀʏ ɴᴏ ғɪʟᴇs ᴡᴇʀᴇ ғᴏᴜɴᴅ 🥺", show_alert=1)
         return
     temp.GETALL[key] = files
     settings = await get_settings(message.chat.id)
@@ -1571,6 +1582,11 @@ async def auto_filter(client, msg, spoll=False):
                 InlineKeyboardButton(f'ɪɴꜰᴏ', 'reqinfo')
             ]
         )
+        btn.insert(0, [
+            InlineKeyboardButton(f'sᴇʟᴇᴄᴛ⇛', 'select'),
+            InlineKeyboardButton("ʟᴀɴɢᴜᴀɢᴇs", callback_data=f"languages#{key}"),
+            InlineKeyboardButton("sᴇᴀsᴏɴs", callback_data=f"seasons#{key}")
+        ])
     else:
         btn = []
         btn.insert(0, 
@@ -1579,6 +1595,11 @@ async def auto_filter(client, msg, spoll=False):
                 InlineKeyboardButton(f'ɪɴꜰᴏ', 'reqinfo')
             ]
         )
+        btn.insert(0, [
+            InlineKeyboardButton(f'sᴇʟᴇᴄᴛ⇛', 'select'),
+            InlineKeyboardButton("ʟᴀɴɢᴜᴀɢᴇs", callback_data=f"languages#{key}"),
+            InlineKeyboardButton("sᴇᴀsᴏɴs", callback_data=f"seasons#{key}")
+        ])
     if offset != "":
         req = message.from_user.id if message.from_user else 0
         try:
