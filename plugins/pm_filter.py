@@ -1193,7 +1193,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('sᴇᴛᴛɪɴɢs', callback_data='setting_btn')
         ], [
             InlineKeyboardButton('ʜᴏᴍᴇ', callback_data='start'),
-            InlineKeyboardButton('ᴇxᴛʀᴀ ᴍᴏᴅs', callback_data='extra')
+            InlineKeyboardButton('ɴᴇxᴛ​ ⇛', callback_data='extra')
         ]]        
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
@@ -1279,7 +1279,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "setting_btn":
         buttons = [[
-            InlineKeyboardButton('⇋ ʙᴀᴄᴋ', callback_data='help2')
+            InlineKeyboardButton('⇋ ʙᴀᴄᴋ', callback_data='help')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
@@ -1289,7 +1289,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "rule_btn":
         buttons = [[
-            InlineKeyboardButton('⇋ ʙᴀᴄᴋ', callback_data='help2')
+            InlineKeyboardButton('⇋ ʙᴀᴄᴋ', callback_data='help')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
@@ -1332,7 +1332,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             await query.answer("Sᴏʀʀʏ Tʜɪs Mᴇɴᴜ Oɴʟʏ Fᴏʀ Mʏ Aᴅᴍɪɴ. 🤒 Oᴏᴘs ❗️", show_alert=True)  
     elif query.data == "stats":
         buttons = [[
-            InlineKeyboardButton('⇚ ʙᴀᴄᴋ​', callback_data='help'),
+            InlineKeyboardButton('⇚ ʙᴀᴄᴋ​', callback_data='about'),
             InlineKeyboardButton('⟲ ʀᴇғʀᴇsʜ', callback_data='rfrsh')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
@@ -1351,7 +1351,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
     elif query.data == "rfrsh":
         await query.answer("Fetching MongoDb DataBase")
         buttons = [[
-            InlineKeyboardButton('⇚ ʙᴀᴄᴋ​', callback_data='help'),
+            InlineKeyboardButton('⇚ ʙᴀᴄᴋ​', callback_data='about'),
             InlineKeyboardButton('⟲ ʀᴇғʀᴇsʜ', callback_data='rfrsh')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
@@ -1708,7 +1708,7 @@ async def advantage_spell_chok(client, msg):
                        InlineKeyboardButton("ɢᴏᴏɢʟᴇ", url=f"https://www.google.com/search?q={reqst_gle}"),
                        InlineKeyboardButton("ɪᴍᴅʙ", url=f"https://www.imdb.com/find/?q={reqst_gle}_=nv_sr_sm")     
                    ],[
-                      InlineKeyboardButton("ᴛʀᴀɴsʟᴀᴛᴇ ᴛᴏ ᴍᴀʟᴀʏᴀʟᴀᴍ", url=f"https://telegra.ph/Translate-To-Malayalam-11-20")            
+                      InlineKeyboardButton("ʟᴀɴɢᴜᴀɢᴇs ᴛᴏ ᴛʀᴀɴsʟᴀᴛᴇ", url=f"https://telegra.ph/Translate-To-Malayalam-11-20")            
             ]]
             if NO_RESULTS_MSG:
                 await client.send_message(chat_id=LOG_CHANNEL, text=(script.NORSLTS.format(reqstr.id, reqstr.mention, mv_rqst)))
@@ -1750,7 +1750,7 @@ async def advantage_spell_chok(client, msg):
                       InlineKeyboardButton("ɢᴏᴏɢʟᴇ", url=f"https://www.google.com/search?q={reqst_gle}"),
                       InlineKeyboardButton("ɪᴍᴅʙ", url=f"https://www.imdb.com/find/?q={reqst_gle}_=nv_sr_sm")     
                    ],[
-                      InlineKeyboardButton("ᴛʀᴀɴsʟᴀᴛᴇ ᴛᴏ ᴍᴀʟᴀʏᴀʟᴀᴍ", url=f"https://telegra.ph/Translate-To-Malayalam-11-20")            
+                      InlineKeyboardButton("ʟᴀɴɢᴜᴀɢᴇs ᴛᴏ ᴛʀᴀɴsʟᴀᴛᴇ", url=f"https://telegra.ph/Translate-To-Malayalam-11-20")            
             ]]
             if NO_RESULTS_MSG:
                 await client.send_message(chat_id=LOG_CHANNEL, text=(script.NORSLTS.format(reqstr.id, reqstr.mention, mv_rqst)))
@@ -1797,7 +1797,7 @@ async def advantage_spell_chok(client, msg):
                        InlineKeyboardButton("ɢᴏᴏɢʟᴇ", url=f"https://www.google.com/search?q={reqst_gle}"),
                        InlineKeyboardButton("ɪᴍᴅʙ", url=f"https://www.imdb.com/find/?q={reqst_gle}_=nv_sr_sm")     
                    ],[
-                      InlineKeyboardButton("ᴛʀᴀɴsʟᴀᴛᴇ ᴛᴏ ᴍᴀʟᴀʏᴀʟᴀᴍ", url=f"https://telegra.ph/Translate-To-Malayalam-11-20")            
+                      InlineKeyboardButton("ʟᴀɴɢᴜᴀɢᴇs ᴛᴏ ᴛʀᴀɴsʟᴀᴛᴇ", url=f"https://telegra.ph/Translate-To-Malayalam-11-20")            
             ]]
             if NO_RESULTS_MSG:
                 await client.send_message(chat_id=LOG_CHANNEL, text=(script.NORSLTS.format(reqstr.id, reqstr.mention, mv_rqst)))
@@ -1817,7 +1817,7 @@ async def advantage_spell_chok(client, msg):
                        InlineKeyboardButton("ɢᴏᴏɢʟᴇ", url=f"https://www.google.com/search?q={reqst_gle}"),
                        InlineKeyboardButton("ɪᴍᴅʙ", url=f"https://www.imdb.com/find/?q={reqst_gle}_=nv_sr_sm")     
                    ],[
-                      InlineKeyboardButton("ᴛʀᴀɴsʟᴀᴛᴇ ᴛᴏ ᴍᴀʟᴀʏᴀʟᴀᴍ", url=f"https://telegra.ph/Translate-To-Malayalam-11-20")            
+                      InlineKeyboardButton("ʟᴀɴɢᴜᴀɢᴇs ᴛᴏ ᴛʀᴀɴsʟᴀᴛᴇ", url=f"https://telegra.ph/Translate-To-Malayalam-11-20")            
             ]]
             if NO_RESULTS_MSG:
                 await client.send_message(chat_id=LOG_CHANNEL, text=(script.NORSLTS.format(reqstr.id, reqstr.mention, mv_rqst)))
