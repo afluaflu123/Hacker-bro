@@ -21,7 +21,7 @@ BOT_TOKEN = environ.get('BOT_TOKEN', "")
 CACHE_TIME = int(environ.get('CACHE_TIME', 300))
 USE_CAPTION_FILTER = bool(environ.get('USE_CAPTION_FILTER', True))
 
-PICS = (environ.get('PICS', 'https://telegra.ph/file/3e8a3865af813840144d4.jpg')).split() #SAMPLE PIC
+PICS = (environ.get('PICS', 'https://telegra.ph/file/3e8a3865af813840144d4.jpg https://telegra.ph/file/2b45e67c1fbd49901c3a0.jpg https://telegra.ph/file/abec213a015b543f1d784.jpg https://telegra.ph/file/ae2e7eb577a47fbe0c921.jpg')).split() #SAMPLE PIC
 SPELL_IMG = environ.get("SPELL_IMG", "https://telegra.ph/file/f54c435eff40b255259b4.jpg")
 NOR_IMG = environ.get('NOR_IMG', "https://graph.org/file/5c0a618d6addaf9d23d66.jpg")
 SNO_IMG = environ.get('SNO_IMG',"https://telegra.ph/file/aae41482507312961e5d8.jpg")
@@ -50,7 +50,7 @@ COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Telegram_files')
 # Others
 VERIFY = bool(environ.get('VERIFY', False))
 SHORTLINK_URL = environ.get('SHORTLINK_URL', 'mplaylink.com')
-SHORTLINK_API = environ.get('SHORTLINK_API', '1f1da5c9df9a58058w672acw8d8134e203b03426a1')
+SHORTLINK_API = environ.get('SHORTLINK_API', '')
 IS_SHORTLINK = bool(environ.get('IS_SHORTLINK', False))
 DELETE_CHANNELS = [int(dch) if id_pattern.search(dch) else dch for dch in environ.get('DELETE_CHANNELS', '0').split()]
 MAX_B_TN = environ.get("MAX_B_TN", "6")
@@ -58,7 +58,7 @@ MAX_BTN = is_enabled((environ.get('MAX_BTN', "False")), False)
 PORT = environ.get("PORT", "8080")
 GRP_LNK = environ.get('GRP_LNK', 'https://t.me/KLMovieGroup')
 CHNL_LNK = environ.get('CHNL_LNK', 'https://t.me/Team_KL')
-TUTORIAL = environ.get('TUTORIAL', '@Team_KL')
+TUTORIAL = environ.get('TUTORIAL', 'Team_KL')
 IS_TUTORIAL = bool(environ.get('IS_TUTORIAL', False))
 MSG_ALRT = environ.get('MSG_ALRT', 'Wʜᴀᴛ Aʀᴇ Yᴏᴜ Lᴏᴏᴋɪɴɢ Aᴛ ?')
 LOG_CHANNEL = int(environ.get('LOG_CHANNEL', ''))
