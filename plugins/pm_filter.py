@@ -112,27 +112,27 @@ async def next_page(bot, query):
 
         btn.insert(0, 
             [
-                InlineKeyboardButton(f'𝀘 {search} 𝀘', 'info'),
-                InlineKeyboardButton(f'ɪɴꜰᴏ', 'reqinfo')                
+                InlineKeyboardButton(f'sᴇʟᴇᴄᴛ⇛', 'select'),
+                InlineKeyboardButton("ʟᴀɴɢᴜᴀɢᴇs", callback_data=f"languages#{key}"),
+                InlineKeyboardButton("sᴇᴀsᴏɴs", callback_data=f"seasons#{key}")                
             ]
         )
         btn.insert(0, [
-            InlineKeyboardButton(f'sᴇʟᴇᴄᴛ⇛', 'select'),
-            InlineKeyboardButton("ʟᴀɴɢᴜᴀɢᴇs", callback_data=f"languages#{key}"),
-            InlineKeyboardButton("sᴇᴀsᴏɴs", callback_data=f"seasons#{key}")
+            InlineKeyboardButton(f'𝀘 {search} 𝀘', 'info'),
+            InlineKeyboardButton(f'ɪɴꜰᴏ', 'reqinfo')
         ])
     else:
         btn = []
         btn.insert(0, 
             [               
-                InlineKeyboardButton(f'𝀘 {search} 𝀘', 'info'),
-                InlineKeyboardButton(f'ɪɴꜰᴏ', 'reqinfo')
+                InlineKeyboardButton(f'sᴇʟᴇᴄᴛ⇛', 'select'),
+                InlineKeyboardButton("ʟᴀɴɢᴜᴀɢᴇs", callback_data=f"languages#{key}"),
+                InlineKeyboardButton("sᴇᴀsᴏɴs", callback_data=f"seasons#{key}")
             ]
         )
         btn.insert(0, [
-            InlineKeyboardButton(f'sᴇʟᴇᴄᴛ⇛', 'select'),
-            InlineKeyboardButton("ʟᴀɴɢᴜᴀɢᴇs", callback_data=f"languages#{key}"),
-            InlineKeyboardButton("sᴇᴀsᴏɴs", callback_data=f"seasons#{key}")
+            InlineKeyboardButton(f'𝀘 {search} 𝀘', 'info'),
+            InlineKeyboardButton(f'ɪɴꜰᴏ', 'reqinfo')
         ])
     try:
         if settings['max_btn']:
@@ -341,48 +341,48 @@ async def filter_languages_cb_handler(client: Client, query: CallbackQuery):
         ]
         btn.insert(0, 
             [
-                InlineKeyboardButton(f'Sᴇʟᴇᴄᴛ ➢', 'select'),
+                InlineKeyboardButton(f'sᴇʟᴇᴄᴛ⇛', 'select'),
                 InlineKeyboardButton("ʟᴀɴɢᴜᴀɢᴇs", callback_data=f"languages#{key}"),
-                InlineKeyboardButton("Sᴇᴀsᴏɴs",  callback_data=f"seasons#{key}")
+                InlineKeyboardButton("sᴇᴀsᴏɴs", callback_data=f"seasons#{key}")
             ]
         )
         btn.insert(0, [
-            InlineKeyboardButton("Sᴛᴀʀᴛ Bᴏᴛ", url=f"https://telegram.me/{temp.U_NAME}"),
-            InlineKeyboardButton("𝐒𝐞𝐧𝐝 𝐀𝐥𝐥", callback_data=f"sendfiles#{key}")
+            InlineKeyboardButton(f'𝀘 {search} 𝀘', 'info'),
+            InlineKeyboardButton(f'ɪɴꜰᴏ', 'reqinfo')
         ])
     else:
         btn = []
         btn.insert(0, 
             [
-                InlineKeyboardButton(f'Sᴇʟᴇᴄᴛ ➢', 'select'),
+                InlineKeyboardButton(f'sᴇʟᴇᴄᴛ⇛', 'select'),
                 InlineKeyboardButton("ʟᴀɴɢᴜᴀɢᴇs", callback_data=f"languages#{key}"),
-                InlineKeyboardButton("Sᴇᴀsᴏɴs",  callback_data=f"seasons#{key}")
+                InlineKeyboardButton("sᴇᴀsᴏɴs", callback_data=f"seasons#{key}")
             ]
         )
         btn.insert(0, [
-            InlineKeyboardButton("Sᴛᴀʀᴛ Bᴏᴛ", url=f"https://telegram.me/{temp.U_NAME}"),
-            InlineKeyboardButton("𝐒𝐞𝐧𝐝 𝐀𝐥𝐥", callback_data=f"sendfiles#{key}")
+            InlineKeyboardButton(f'𝀘 {search} 𝀘', 'info'),
+            InlineKeyboardButton(f'ɪɴꜰᴏ', 'reqinfo')
         ])
 
     if offset != "":
         try:
             if settings['max_btn']:
                 btn.append(
-                    [InlineKeyboardButton("𝐏𝐀𝐆𝐄", callback_data="pages"), InlineKeyboardButton(text=f"1/{math.ceil(int(total_results)/10)}",callback_data="pages"), InlineKeyboardButton(text="𝐍𝐄𝐗𝐓 ➪",callback_data=f"next_{req}_{key}_{offset}")]
+                    [InlineKeyboardButton("ᴘᴀɢᴇ", callback_data="pages"), InlineKeyboardButton(text=f"1/{math.ceil(int(total_results)/10)}",callback_data="pages"), InlineKeyboardButton(text="ɴᴇxᴛ ​⇛",callback_data=f"next_{req}_{key}_{offset}")]
                 )
     
             else:
                 btn.append(
-                    [InlineKeyboardButton("𝐏𝐀𝐆𝐄", callback_data="pages"), InlineKeyboardButton(text=f"1/{math.ceil(int(total_results)/int(MAX_B_TN))}",callback_data="pages"), InlineKeyboardButton(text="𝐍𝐄𝐗𝐓 ➪",callback_data=f"next_{req}_{key}_{offset}")]
+                    [InlineKeyboardButton("ᴘᴀɢᴇ", callback_data="pages"), InlineKeyboardButton(text=f"1/{math.ceil(int(total_results)/int(MAX_B_TN))}",callback_data="pages"), InlineKeyboardButton(text="ɴᴇxᴛ ​⇛",callback_data=f"next_{req}_{key}_{offset}")]
                 )
         except KeyError:
             await save_group_settings(query.message.chat.id, 'max_btn', True)
             btn.append(
-                [InlineKeyboardButton("𝐏𝐀𝐆𝐄", callback_data="pages"), InlineKeyboardButton(text=f"1/{math.ceil(int(total_results)/10)}",callback_data="pages"), InlineKeyboardButton(text="𝐍𝐄𝐗𝐓 ➪",callback_data=f"next_{req}_{key}_{offset}")]
+                [InlineKeyboardButton("ᴘᴀɢᴇ", callback_data="pages"), InlineKeyboardButton(text=f"1/{math.ceil(int(total_results)/10)}",callback_data="pages"), InlineKeyboardButton(text="ɴᴇxᴛ ​⇛",callback_data=f"next_{req}_{key}_{offset}")]
             )
     else:
         btn.append(
-            [InlineKeyboardButton(text="𝐍𝐎 𝐌𝐎𝐑𝐄 𝐏𝐀𝐆𝐄𝐒 𝐀𝐕𝐀𝐈𝐋𝐀𝐁𝐋𝐄",callback_data="pages")]
+            [InlineKeyboardButton(text="ɴᴏ ᴍᴏʀᴇ ᴘᴀɢᴇs ᴀᴠᴀɪʟᴀʙʟᴇ",callback_data="pages")]
         )
     
     if not settings["button"]:
@@ -532,21 +532,21 @@ async def filter_seasons_cb_handler(client: Client, query: CallbackQuery):
         btn = []
         btn.insert(0, 
             [
-                InlineKeyboardButton(f'Sᴇʟᴇᴄᴛ ➢', 'select'),
+                InlineKeyboardButton(f'sᴇʟᴇᴄᴛ⇛', 'select'),
                 InlineKeyboardButton("ʟᴀɴɢᴜᴀɢᴇs", callback_data=f"languages#{key}"),
-                InlineKeyboardButton("Sᴇᴀsᴏɴs",  callback_data=f"seasons#{key}")
+                InlineKeyboardButton("sᴇᴀsᴏɴs", callback_data=f"seasons#{key}")
             ]
         )
         btn.insert(0, [
-            InlineKeyboardButton("Sᴛᴀʀᴛ Bᴏᴛ", url=f"https://telegram.me/{temp.U_NAME}"),
-            InlineKeyboardButton("𝐒𝐞𝐧𝐝 𝐀𝐥𝐥", callback_data=f"sendfiles#{key}")
+            InlineKeyboardButton(f'𝀘 {search} 𝀘', 'info'),
+            InlineKeyboardButton(f'ɪɴꜰᴏ', 'reqinfo')
         ])
         
     offset = 0
 
     btn.append([
             InlineKeyboardButton(
-                text="↭ ʙᴀᴄᴋ ᴛᴏ ꜰɪʟᴇs ​↭",
+                text="⇚ ʙᴀᴄᴋ ᴛᴏ ғɪʟᴇs ⇛",
                 callback_data=f"next_{req}_{key}_{offset}"
                 ),
     ])
@@ -1146,7 +1146,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     InlineKeyboardButton('➕ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ➕', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
                 ],[
                     InlineKeyboardButton('🔍 sᴇᴀʀᴄʜ ʜᴇʀᴇ', switch_inline_query_current_chat=''),
-                    InlineKeyboardButton('🎌 ʙᴏᴛ ᴏᴡɴᴇʀ', callback_data='owner_info')
+                    InlineKeyboardButton('🦅 ʙᴏᴛ ᴏᴡɴᴇʀ', callback_data='owner_info')
                 ],[
                     InlineKeyboardButton('🪄 ʜᴇʟᴘ', callback_data='help'),
                     InlineKeyboardButton('⚒ ᴀʙᴏᴜᴛ', callback_data='about')
@@ -1280,35 +1280,14 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "extra":
         buttons = [[
-            InlineKeyboardButton('⇚ ʙᴀᴄᴋ​', callback_data='help'),
-            InlineKeyboardButton('ᴊsᴏɴ', callback_data='json')
+            InlineKeyboardButton('⇚ ʙᴀᴄᴋ​', callback_data='help')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
             text=script.EXTRAMOD_TXT,
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
-        )
-    elif query.data == "json":
-        buttons = [[
-            InlineKeyboardButton('⇚ ʙᴀᴄᴋ​', callback_data='extra')
-        ]]
-        reply_markup = InlineKeyboardMarkup(buttons)
-        await query.message.edit_text(
-            text=script.JSONMOD_TXT,
-            reply_markup=reply_markup,
-            parse_mode=enums.ParseMode.HTML
-        )
-    elif query.data == "imdbmod":
-        buttons = [[
-            InlineKeyboardButton('⇚ ʙᴀᴄᴋ​', callback_data='help')
-        ]]
-        reply_markup = InlineKeyboardMarkup(buttons)
-        await query.message.edit_text(
-            text=script.IMDBMOD_TXT,
-            reply_markup=reply_markup,
-            parse_mode=enums.ParseMode.HTML
-        )
+        )    
     elif query.data == "setting_btn":
         buttons = [[
             InlineKeyboardButton('⇋ ʙᴀᴄᴋ', callback_data='help')
@@ -1578,27 +1557,27 @@ async def auto_filter(client, msg, spoll=False):
         ]
         btn.insert(0, 
             [
-                InlineKeyboardButton(f'𝀘 {search} 𝀘', 'info'),
-                InlineKeyboardButton(f'ɪɴꜰᴏ', 'reqinfo')
+                InlineKeyboardButton(f'sᴇʟᴇᴄᴛ⇛', 'select'),
+                InlineKeyboardButton("ʟᴀɴɢᴜᴀɢᴇs", callback_data=f"languages#{key}"),
+                InlineKeyboardButton("sᴇᴀsᴏɴs", callback_data=f"seasons#{key}")
             ]
         )
         btn.insert(0, [
-            InlineKeyboardButton(f'sᴇʟᴇᴄᴛ⇛', 'select'),
-            InlineKeyboardButton("ʟᴀɴɢᴜᴀɢᴇs", callback_data=f"languages#{key}"),
-            InlineKeyboardButton("sᴇᴀsᴏɴs", callback_data=f"seasons#{key}")
+            InlineKeyboardButton(f'𝀘 {search} 𝀘', 'info'),
+            InlineKeyboardButton(f'ɪɴꜰᴏ', 'reqinfo')
         ])
     else:
         btn = []
         btn.insert(0, 
             [
-                InlineKeyboardButton(f'𝀘 {search} 𝀘', 'info'),
-                InlineKeyboardButton(f'ɪɴꜰᴏ', 'reqinfo')
+                InlineKeyboardButton(f'sᴇʟᴇᴄᴛ⇛', 'select'),
+                InlineKeyboardButton("ʟᴀɴɢᴜᴀɢᴇs", callback_data=f"languages#{key}"),
+                InlineKeyboardButton("sᴇᴀsᴏɴs", callback_data=f"seasons#{key}")
             ]
         )
         btn.insert(0, [
-            InlineKeyboardButton(f'sᴇʟᴇᴄᴛ⇛', 'select'),
-            InlineKeyboardButton("ʟᴀɴɢᴜᴀɢᴇs", callback_data=f"languages#{key}"),
-            InlineKeyboardButton("sᴇᴀsᴏɴs", callback_data=f"seasons#{key}")
+            InlineKeyboardButton(f'𝀘 {search} 𝀘', 'info'),
+            InlineKeyboardButton(f'ɪɴꜰᴏ', 'reqinfo')
         ])
     if offset != "":
         req = message.from_user.id if message.from_user else 0
