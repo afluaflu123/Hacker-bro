@@ -1189,11 +1189,12 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('ᴄᴏɴɴᴇᴄᴛɪᴏɴ', callback_data='coct'),
             InlineKeyboardButton('ᴀᴅᴍɪɴ ᴘᴀɴᴇʟ', callback_data='admin')
         ], [
-            InlineKeyboardButton('ʀᴜʟᴇs', callback_data='rule_btn'),
-            InlineKeyboardButton('sᴇᴛᴛɪɴɢs', callback_data='setting_btn')
+            InlineKeyboardButton('ʀᴜʟᴇs', callback_data='rule_btn'),          
+            InlineKeyboardButton('ᴍɪsᴄ', callback_data='extra'),
+            InlineKeyboardButton('ɪᴍᴅʙ', callback_data='imdbmod')
         ], [
-            InlineKeyboardButton('ʜᴏᴍᴇ', callback_data='start'),
-            InlineKeyboardButton('ɴᴇxᴛ​ ⇛', callback_data='extra')
+            InlineKeyboardButton('⇚ ʜᴏᴍᴇ', callback_data='start'),
+            InlineKeyboardButton('sᴇᴛᴛɪɴɢs', callback_data='setting_btn')
         ]]        
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
@@ -1269,11 +1270,31 @@ async def cb_handler(client: Client, query: CallbackQuery):
     elif query.data == "extra":
         buttons = [[
             InlineKeyboardButton('⇚ ʙᴀᴄᴋ​', callback_data='help'),
-            InlineKeyboardButton('🔐 ᴀᴅᴍɪɴ', callback_data='admin')
+            InlineKeyboardButton('ᴊsᴏɴ', callback_data='json')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
             text=script.EXTRAMOD_TXT,
+            reply_markup=reply_markup,
+            parse_mode=enums.ParseMode.HTML
+        )
+    elif query.data == "json":
+        buttons = [[
+            InlineKeyboardButton('⇚ ʙᴀᴄᴋ​', callback_data='extra')
+        ]]
+        reply_markup = InlineKeyboardMarkup(buttons)
+        await query.message.edit_text(
+            text=script.JSONMOD_TXT,
+            reply_markup=reply_markup,
+            parse_mode=enums.ParseMode.HTML
+        )
+    elif query.data == "imdbmod":
+        buttons = [[
+            InlineKeyboardButton('⇚ ʙᴀᴄᴋ​', callback_data='help')
+        ]]
+        reply_markup = InlineKeyboardMarkup(buttons)
+        await query.message.edit_text(
+            text=script.IMDBMOD_TXT,
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
         )
