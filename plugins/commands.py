@@ -50,7 +50,7 @@ async def start(client, message):
                     InlineKeyboardButton('➕ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ➕', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
                 ],[
                     InlineKeyboardButton('🔍 sᴇᴀʀᴄʜ ʜᴇʀᴇ', switch_inline_query_current_chat=''),
-                    InlineKeyboardButton('🎌 ʙᴏᴛ ᴏᴡɴᴇʀ', callback_data='owner_info')
+                    InlineKeyboardButton('🦅 ʙᴏᴛ ᴏᴡɴᴇʀ', callback_data='owner_info')
                 ],[
                     InlineKeyboardButton('🪄 ʜᴇʟᴘ', callback_data='help'),
                     InlineKeyboardButton('⚒ ᴀʙᴏᴜᴛ', callback_data='about')
@@ -99,7 +99,7 @@ async def start(client, message):
                     InlineKeyboardButton('➕ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ➕', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
                 ],[
                     InlineKeyboardButton('🔍 sᴇᴀʀᴄʜ ʜᴇʀᴇ', switch_inline_query_current_chat=''),
-                    InlineKeyboardButton('🎌 ʙᴏᴛ ᴏᴡɴᴇʀ', callback_data='owner_info')
+                    InlineKeyboardButton('🦅 ʙᴏᴛ ᴏᴡɴᴇʀ', callback_data='owner_info')
                 ],[
                     InlineKeyboardButton('🪄 ʜᴇʟᴘ', callback_data='help'),
                     InlineKeyboardButton('⚒ ᴀʙᴏᴜᴛ', callback_data='about')
@@ -403,6 +403,7 @@ async def start(client, message):
             await asyncio.sleep(200)
             await msg.delete()
             await k.delete()
+            await message.delete()
             return
         except:
             pass
@@ -446,6 +447,7 @@ async def start(client, message):
     await asyncio.sleep(200)
     await msg.delete()
     await k.delete()    
+    await message.delete()
     return   
 
 @Client.on_message(filters.command('channel') & filters.user(ADMINS))
