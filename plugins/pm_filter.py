@@ -513,7 +513,6 @@ async def filter_seasons_cb_handler(client: Client, query: CallbackQuery):
         await query.answer("sᴏʀʀʏ ɴᴏ ғɪʟᴇs ᴡᴇʀᴇ ғᴏᴜɴᴅ 🥺", show_alert=1)
         return
     temp.GETALL[key] = files
-    settintemp.GETALL[key] = files
     settings = await get_settings(message.chat.id)
     pre = 'filep' if settings['file_secure'] else 'file'
     if settings["button"]:
