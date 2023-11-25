@@ -272,6 +272,8 @@ async def languages_cb_handler(client: Client, query: CallbackQuery):
     btn = []
     for i in range(0, len(LANGUAGES)-1, 2):
         btn.append([
+            InlineKeyboardButton("Mᴀʟᴀʏᴀʟᴀᴍ", callback_data=f"fl#{key}#mal"),
+        ],[
             InlineKeyboardButton(
                 text=LANGUAGES[i].title(),
                 callback_data=f"fl#{LANGUAGES[i].lower()}#{key}"
