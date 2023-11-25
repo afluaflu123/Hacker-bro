@@ -258,17 +258,17 @@ async def languages_cb_handler(client: Client, query: CallbackQuery):
     btn = [[
         InlineKeyboardButton("Sᴇʟᴇᴄᴛ Yᴏᴜʀ Dᴇꜱɪʀᴇᴅ Lᴀɴɢᴜᴀɢᴇ ↓", callback_data=f"fl#{key}#unknown")
     ],[
-        InlineKeyboardButton("Eɴɢʟɪꜱʜ", callback_data=f"fl#{key}#eng"),
-        InlineKeyboardButton("Tᴀᴍɪʟ", callback_data=f"fl#{key}#tam"),
-        InlineKeyboardButton("Hɪɴᴅɪ", callback_data=f"fl#{key}#hin")
+        InlineKeyboardButton("Eɴɢʟɪꜱʜ", callback_data=f"fl#eng#{key}"),
+        InlineKeyboardButton("Tᴀᴍɪʟ", callback_data=f"fl#tam#{key}"),
+        InlineKeyboardButton("Hɪɴᴅɪ", callback_data=f"fl#hin#{key}")
     ],[
-        InlineKeyboardButton("Kᴀɴɴᴀᴅᴀ", callback_data=f"fl#{key}#kan"),
-        InlineKeyboardButton("Tᴇʟᴜɢᴜ", callback_data=f"fl#{key}#tel")
+        InlineKeyboardButton("Kᴀɴɴᴀᴅᴀ", callback_data=f"fl#kan#{key}"),
+        InlineKeyboardButton("Tᴇʟᴜɢᴜ", callback_data=f"fl#tel#{key}")
     ],[
-        InlineKeyboardButton("Mᴀʟᴀʏᴀʟᴀᴍ", callback_data=f"fl#{key}#mal")
+        InlineKeyboardButton("Mᴀʟᴀʏᴀʟᴀᴍ", callback_data=f"fl#mal#{key}")
     ],[
-        InlineKeyboardButton("Mᴜʟᴛɪ Aᴜᴅɪᴏ", callback_data=f"fl#{key}#multi"),
-        InlineKeyboardButton("Dᴜᴀʟ Aᴜᴅɪᴏ", callback_data=f"fl#{key}#dual")
+        InlineKeyboardButton("Mᴜʟᴛɪ Aᴜᴅɪᴏ", callback_data=f"fl#multi#{key}"),
+        InlineKeyboardButton("Dᴜᴀʟ Aᴜᴅɪᴏ", callback_data=f"fl#dual#{key}")
     ],[
         InlineKeyboardButton("Gᴏ Bᴀᴄᴋ", callback_data=f"fl#homepage#{key}")
     ]]
