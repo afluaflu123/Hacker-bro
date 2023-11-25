@@ -262,6 +262,8 @@ async def languages_cb_handler(client: Client, query: CallbackQuery):
     except:
         pass
     _, key = query.data.split("#")
+    req = query.from_user.id
+    offset = 0
     # if BUTTONS.get(key+"1")!=None:
     #     search = BUTTONS.get(key+"1")
     # else:
@@ -269,33 +271,27 @@ async def languages_cb_handler(client: Client, query: CallbackQuery):
     #     BUTTONS[key+"1"] = search
     search = FRESH.get(key)
     search = search.replace(' ', '_')
-    btn = []
-        btn.append([
-            InlineKeyboardButton(
-                text=Mᴀʟᴀʏᴀʟᴀᴍ,
-                callback_data=f"fl#mal#{key}"
-            ),
-            InlineKeyboardButton(
-                text=Tᴀᴍɪʟ,
-                callback_data=f"fl#{key}#tam"
-            ),
-        ])
-
-    btn.insert(
-        0,
-        [
-            InlineKeyboardButton(
-                text="sᴇʟᴇᴄᴛ ʏᴏᴜʀ ᴅᴇsɪʀᴇᴅ ʟᴀɴɢᴜᴀɢᴇs", callback_data="ident"
-            )
-        ],
-    )
-    req = query.from_user.id
-    offset = 0
-    btn.append([InlineKeyboardButton(text="⇚ ʙᴀᴄᴋ ᴛᴏ ғɪʟᴇs ⇛", callback_data=f"fl#homepage#{key}")])
-
-    await query.edit_message_reply_markup(InlineKeyboardMarkup(btn))
+    btn = [[
+        InlineKeyboardButton("Sᴇʟᴇᴄᴛ Yᴏᴜʀ Dᴇꜱɪʀᴇᴅ Lᴀɴɢᴜᴀɢᴇ ↓", callback_data="ident")
+    ],[
+        InlineKeyboardButton("Malayalam", callback_data=f"fl#mal#{key}",
+        InlineKeyboardButton("Tᴀᴍɪʟ", callback_data=f"fl#{key}#tam"),
+        InlineKeyboardButton("Hɪɴᴅɪ", callback_data=f"fl#{key}#hin")
+    ],[
+        InlineKeyboardButton("Dᴜᴀʟ Aᴜᴅɪᴏ", callback_data=f"fl#{key}#dual")
+    ],[
+        InlineKeyboardButton("Gᴏ Bᴀᴄᴋ", callback_data=f"fl#homepage#{key}")
+    ]]
+    try:
+        await query.edit_message_reply_markup(
+            reply_markup=InlineKeyboardMarkup(btn)
+        )
+    except MessageNotModified:
+        pass
+    await query.answer()
     
 
+   
 @Client.on_callback_query(filters.regex(r"^fl#"))
 async def filter_languages_cb_handler(client: Client, query: CallbackQuery):
     _, lang, key = query.data.split("#")
