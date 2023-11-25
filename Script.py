@@ -121,8 +121,7 @@ sᴏᴜʀᴄᴇ ᴄᴏᴅᴇ ~ ᴘʀɪᴠᴀᴛᴇ</b>"""
 ★ ᴛᴏᴛᴀʟ ᴜsᴇʀs: <code>{}</code>
 ★ ᴛᴏᴛᴀʟ ᴄʜᴀᴛs: <code>{}</code>
 ★ ᴜsᴇᴅ sᴛᴏʀᴀɢᴇ: <code>{}</code>
-★ ғʀᴇᴇ sᴛᴏʀᴀɢᴇ: <code>{}</code>
-★ ᴜᴘᴛɪᴍᴇ: <code>{}</code></b>"""
+★ ғʀᴇᴇ sᴛᴏʀᴀɢᴇ: <code>{}</code></b>"""
 
     LOG_TEXT_G = """#NewGroup
 Gʀᴏᴜᴘ = {}(<code>{}</code>)
@@ -312,8 +311,7 @@ I'll Send You That Movie Privately.</b>"""
     
 ‣ ꜰᴜʟʟ ɴᴀᴍᴇ : HᴀᴄKᴇʀ Jʀ ~ 🦅
 ‣ ᴜꜱᴇʀɴᴀᴍᴇ : @Hacker_Jr
-‣ ᴄᴏᴜɴᴛʀʏ : ɪɴᴅɪᴀ 🇮🇳
-‣ ᴄʜɴɴɴᴇʟ : <a href='t.me/PremiumlogoPro'>Pʀᴇᴍɪᴜᴍ Lᴏɢᴏ Pʀᴏ</a></b>"""    
+‣ ᴄᴏᴜɴᴛʀʏ : ɪɴᴅɪᴀ 🇮🇳</b>"""    
     
     JSONMOD_TXT = """ʙᴏᴛ ʀᴇᴛᴜʀɴs ᴊsᴏɴ ғᴏʀ ᴀʟʟ ʀᴇᴘʟɪᴇᴅ ᴍᴇssᴀɢᴇs ᴡɪᴛʜ /json
 
