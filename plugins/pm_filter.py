@@ -254,23 +254,23 @@ async def advantage_spoll_choker(bot, query):
 async def languages_cb_handler(client: Client, query: CallbackQuery):
     _, key = query.data.split("#")
     if int(query.from_user.id) not in [query.message.reply_to_message.from_user.id, 0]:
-        return await query.answer(f"⚠️ ʜᴇʟʟᴏ{query.from_user.first_name},\nᴛʜɪꜱ ɪꜱ ɴᴏᴛ ʏᴏᴜʀ ᴍᴏᴠɪᴇ ʀᴇQᴜᴇꜱᴛ,\nʀᴇQᴜᴇꜱᴛ ʏᴏᴜʀ'ꜱ...", show_alert=True)
+        return await query.answer(f"⚠️ ʜᴇʟʟᴏ{query.from_user.first_name},\nᴛʜɪꜱ ɪꜱ ɴᴏᴛ ʏᴏᴜʀ ᴍᴏᴠɪᴇ ʀᴇqᴜᴇꜱᴛ ʏᴏᴜʀ'ꜱ...", show_alert=True)
     btn = [[
-        InlineKeyboardButton("Sᴇʟᴇᴄᴛ Yᴏᴜʀ Dᴇꜱɪʀᴇᴅ Lᴀɴɢᴜᴀɢᴇ ↓", callback_data=f"fl#{key}#unknown")
+        InlineKeyboardButton("↓sᴇʟᴇᴄᴛ ʏᴏᴜʀ ᴅᴇsɪʀᴇᴅ ʟᴀɴɢᴜᴀɢᴇs↓", callback_data=f"fl#{key}#unknown")
     ],[
-        InlineKeyboardButton("Eɴɢʟɪꜱʜ", callback_data=f"fl#eng#{key}"),
-        InlineKeyboardButton("Tᴀᴍɪʟ", callback_data=f"fl#tam#{key}"),
-        InlineKeyboardButton("Hɪɴᴅɪ", callback_data=f"fl#hin#{key}")
+        InlineKeyboardButton("ᴍᴀʟᴀʏᴀʟᴀᴍ", callback_data=f"fl#mal#{key}"),
+        InlineKeyboardButton("ᴛᴀᴍɪʟ", callback_data=f"fl#tam#{key}")
+    ],[        
+        InlineKeyboardButton("ᴛᴇʟᴜɢᴜ", callback_data=f"fl#tel#{key}"),
+        InlineKeyboardButton("ʜɪɴᴅɪ", callback_data=f"fl#hin#{key}")
     ],[
-        InlineKeyboardButton("Kᴀɴɴᴀᴅᴀ", callback_data=f"fl#kan#{key}"),
-        InlineKeyboardButton("Tᴇʟᴜɢᴜ", callback_data=f"fl#tel#{key}")
+        InlineKeyboardButton("ᴇɴɢʟɪsʜ", callback_data=f"fl#eng#{key}"),
+        InlineKeyboardButton("ᴋᴀɴɴᴀᴅᴀ", callback_data=f"fl#kan#{key}")       
     ],[
-        InlineKeyboardButton("Mᴀʟᴀʏᴀʟᴀᴍ", callback_data=f"fl#mal#{key}")
+        InlineKeyboardButton("ᴍᴜʟᴛɪ ᴀᴜᴅɪᴏ", callback_data=f"fl#multi#{key}"),
+        InlineKeyboardButton("ᴅᴜᴀʟ ᴀᴜᴅɪᴏ", callback_data=f"fl#dual#{key}")
     ],[
-        InlineKeyboardButton("Mᴜʟᴛɪ Aᴜᴅɪᴏ", callback_data=f"fl#multi#{key}"),
-        InlineKeyboardButton("Dᴜᴀʟ Aᴜᴅɪᴏ", callback_data=f"fl#dual#{key}")
-    ],[
-        InlineKeyboardButton("Gᴏ Bᴀᴄᴋ", callback_data=f"fl#homepage#{key}")
+        InlineKeyboardButton("⇚ ʙᴀᴄᴋ ᴛᴏ ғɪʟᴇs ⇛", callback_data=f"fl#homepage#{key}")
     ]]
     try:
         await query.edit_message_reply_markup(
