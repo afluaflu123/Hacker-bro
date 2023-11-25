@@ -285,10 +285,8 @@ async def languages_cb_handler(client: Client, query: CallbackQuery):
     btn.insert(
         0,
         [
-            InlineKeyboardButton("Mᴀʟᴀʏᴀʟᴀᴍ", callback_data=f"fl#{key}#mal")
-        ],[
             InlineKeyboardButton(
-                text="sᴇʟᴇᴄᴛ ʏᴏᴜʀ ᴅᴇsɪʀᴇᴅ ʟᴀɴɢᴜᴀɢᴇs", callback_data="ident"
+                text="sᴇʟᴇᴄᴛ ʏᴏᴜʀ ᴅᴇsɪʀᴇᴅ ʟᴀɴɢᴜᴀɢᴇs", callback_data=f"fl#{key}#mal"
             )
         ],
     )
