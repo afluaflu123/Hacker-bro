@@ -70,6 +70,20 @@ async def is_subscribed(bot, query):
 
     return False
 
+start_time = BOT_START_TIME
+
+async def get_bot_uptime():
+    # Calculate the uptime in seconds
+    uptime_seconds = int(time.time() - start_time)
+    uptime_minutes = uptime_seconds // 60
+    uptime_hours = uptime_minutes // 60
+    uptime_days = uptime_hours // 24
+    uptime_weeks = uptime_days // 7
+    #✨️✨️✨️✨️🔥
+    # Format the uptime strin 
+    uptime_string = f"{uptime_days % 7} Day {uptime_hours % 24} Hour {uptime_minutes % 60} Min {uptime_seconds % 60} Sec"
+    return uptime_string
+
 async def get_poster(query, bulk=False, id=False, file=None):
     if not id:
         # https://t.me/GetTGLink/4183
