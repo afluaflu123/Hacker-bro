@@ -443,7 +443,7 @@ async def start(client, message):
             ]
         )
     )
-    k = await msg.reply("<b>ㅤㅤ❕❕<u>IMPORTANT</u>❕❕\n\nThis File Will Be Deleted From Here Within <u>10 Minute</u>. Please Forward This File To Your Saved Messages And Start Download There.</b>",quote=True)
+    k = await msg.reply("<b>ㅤㅤ❕❕<u>IMPORTANT</u>❕❕\n\nThis File Will Be Deleted From Here Within <u>10 Minute</u>. Please Forward This File To Your Saved Messages And Start Download There.\n\n➥ ʜᴏᴡ ᴛᴏ ғᴏʀᴡᴀʀᴅ :  <a href=https://t.me/TelegramTips/242>ᴄʟɪᴄᴋ ʜᴇʀᴇ</a></b>",quote=True)
     await asyncio.sleep(200)
     await msg.delete()
     await k.delete()    
