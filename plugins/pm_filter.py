@@ -270,15 +270,14 @@ async def languages_cb_handler(client: Client, query: CallbackQuery):
     search = FRESH.get(key)
     search = search.replace(' ', '_')
     btn = []
-    for i in range(0, len(LANGUAGES)-1, 2):
         btn.append([
             InlineKeyboardButton(
-                text=LANGUAGES[i].title(),
-                callback_data=f"fl#{LANGUAGES[i].lower()}#{key}"
+                text=Mᴀʟᴀʏᴀʟᴀᴍ,
+                callback_data=f"fl#mal#{key}"
             ),
             InlineKeyboardButton(
-                text=LANGUAGES[i+1].title(),
-                callback_data=f"fl#{LANGUAGES[i+1].lower()}#{key}"
+                text=Tᴀᴍɪʟ,
+                callback_data=f"fl#{key}#tam"
             ),
         ])
 
@@ -286,7 +285,7 @@ async def languages_cb_handler(client: Client, query: CallbackQuery):
         0,
         [
             InlineKeyboardButton(
-                text="sᴇʟᴇᴄᴛ ʏᴏᴜʀ ᴅᴇsɪʀᴇᴅ ʟᴀɴɢᴜᴀɢᴇs", callback_data=f"fl#{key}#mal"
+                text="sᴇʟᴇᴄᴛ ʏᴏᴜʀ ᴅᴇsɪʀᴇᴅ ʟᴀɴɢᴜᴀɢᴇs", callback_data="ident"
             )
         ],
     )
