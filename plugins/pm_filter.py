@@ -5,8 +5,6 @@ import ast
 import math
 import random
 import pytz
-import datetime
-import time
 from datetime import datetime, timedelta, date, time
 lock = asyncio.Lock()
 
@@ -45,7 +43,6 @@ BUTTONS0 = {}
 BUTTONS1 = {}
 BUTTONS2 = {}
 SPELL_CHECK = {}
-START_TIME = 0
 # ENABLE_SHORTLINK = ""
 
 @Client.on_message(filters.group & filters.text & filters.incoming)
@@ -1347,7 +1344,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         free = 536870912 - monsize
         monsize = get_size(monsize)
         free = get_size(free)
-        uptime = get_readable_time(time.time() - START_TIME)
+        uptime = get_readable_time(time.time() - temp.START_TIME)
         await query.message.edit_text(
             text=script.STATUS_TXT.format(total, users, chats, monsize, free, uptime),
             reply_markup=reply_markup,
@@ -1367,7 +1364,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         free = 536870912 - monsize
         monsize = get_size(monsize)
         free = get_size(free)
-        uptime = get_readable_time(time.time() - START_TIME)
+        uptime = get_readable_time(time.time() - temp.START_TIME)
         await query.message.edit_text(
             text=script.STATUS_TXT.format(total, users, chats, monsize, free, uptime),
             reply_markup=reply_markup,
