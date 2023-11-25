@@ -1302,7 +1302,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "owner_info":
         buttons = [[
-            InlineKeyboardButton('⇚ ʙᴀᴄᴋ​', callback_data='start'),            
+            InlineKeyboardButton('⇚ ʙᴀᴄᴋ​', callback_data='start'),    
+            InlineKeyboardButton('ᴘʀᴇᴍɪᴜᴍ ʟᴏɢᴏ ᴘʀᴏ', url='https://t.me/PremiumLogoPro')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await client.edit_message_media(
@@ -1512,6 +1513,7 @@ async def auto_filter(client, msg, spoll=False):
                     continue
                 else:
                     search = search + x + " "
+            search = re.sub(r"\b(pl(i|e)*?(s|z+|ease|se|ese|(e+)s(e)?)|((send|snd|giv(e)?|gib)(\sme)?)|movie(s)?|bro|bruh|broh|helo|dubbed|link|venum|iruka|pannunga|pannungga|anuppunga|anupunga|anuppungga|anupungga|film|undo|kitti|kitty|tharu|kittumo|kittum|movie|any(one)|with\ssubtitle(s)?)", "", search, flags=re.IGNORECASE)
             search = re.sub(r"\s+", " ", search).strip()
             search = search.replace("-", " ")
             search = search.replace(":","")
