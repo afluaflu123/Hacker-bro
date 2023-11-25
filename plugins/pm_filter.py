@@ -258,7 +258,7 @@ async def languages_cb_handler(client: Client, query: CallbackQuery):
     if int(query.from_user.id) not in [query.message.reply_to_message.from_user.id, 0]:
         return await query.answer(f"⚠️ ʜᴇʟʟᴏ{query.from_user.first_name},\nᴛʜɪꜱ ɪꜱ ɴᴏᴛ ʏᴏᴜʀ ᴍᴏᴠɪᴇ ʀᴇqᴜᴇꜱᴛ ʏᴏᴜʀ'ꜱ...", show_alert=True)
     btn = [[
-        InlineKeyboardButton("↓sᴇʟᴇᴄᴛ ʏᴏᴜʀ ᴅᴇsɪʀᴇᴅ ʟᴀɴɢᴜᴀɢᴇs↓", callback_data=f"fl#{key}#unknown")
+        InlineKeyboardButton("↓sᴇʟᴇᴄᴛ ʏᴏᴜʀ ᴅᴇsɪʀᴇᴅ ʟᴀɴɢᴜᴀɢᴇs↓", callback_data=f"fl#unknown#{key}")
     ],[
         InlineKeyboardButton("ᴍᴀʟᴀʏᴀʟᴀᴍ", callback_data=f"fl#mal#{key}"),
         InlineKeyboardButton("ᴛᴀᴍɪʟ", callback_data=f"fl#tam#{key}")
@@ -304,13 +304,15 @@ async def filter_languages_cb_handler(client: Client, query: CallbackQuery):
             )
     except:
         pass
+    if lang == "unknown":
+        return await query.answer("sᴇʟᴇᴄᴛ ᴀɴʏ ʟᴀɴɢᴜᴀɢᴇ ғʀᴏᴍ ᴛʜᴇ ʙᴇʟᴏᴡ ʙᴜᴛᴛᴏɴs !", show_alert=True)
     if lang != "homepage":
         search = f"{search} {lang}" 
     BUTTONS[key] = search
 
     files, offset, total_results = await get_search_results(chat_id, search, offset=0, filter=True)
     if not files:
-        await query.answer("🚫 𝗡𝗼 𝗙𝗶𝗹𝗲 𝗪𝗲𝗿𝗲 𝗙𝗼𝘂𝗻𝗱 🚫", show_alert=1)
+        await query.answer(f"sᴏʀʀʏ, ɴᴏ ғɪʟᴇs ғᴏᴜɴᴅ ғᴏʀ ʏᴏᴜʀ ᴏ̨ᴜᴇʀʏ {search}", show_alert=1)
         return
     temp.GETALL[key] = files
     settings = await get_settings(message.chat.id)
