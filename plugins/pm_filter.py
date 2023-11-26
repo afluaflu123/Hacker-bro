@@ -253,8 +253,8 @@ async def advantage_spoll_choker(bot, query):
 @Client.on_callback_query(filters.regex(r"^languages#"))
 async def languages_cb_handler(client: Client, query: CallbackQuery):
     _, key = query.data.split("#")
-    req = query.from_user.id
-    offset = 0
+#    req = query.from_user.id
+#    offset = 0
     if int(query.from_user.id) not in [query.message.reply_to_message.from_user.id, 0]:
         return await query.answer(f"⚠️ ʜᴇʟʟᴏ{query.from_user.first_name},\nᴛʜɪꜱ ɪꜱ ɴᴏᴛ ʏᴏᴜʀ ᴍᴏᴠɪᴇ ʀᴇqᴜᴇꜱᴛ ʏᴏᴜʀ'ꜱ...", show_alert=True)
     btn = [[
@@ -272,7 +272,7 @@ async def languages_cb_handler(client: Client, query: CallbackQuery):
         InlineKeyboardButton("ᴍᴜʟᴛɪ ᴀᴜᴅɪᴏ", callback_data=f"fl#multi#{key}"),
         InlineKeyboardButton("ᴅᴜᴀʟ ᴀᴜᴅɪᴏ", callback_data=f"fl#dual#{key}")
     ],[
-        InlineKeyboardButton("⇚ ʙᴀᴄᴋ ᴛᴏ ғɪʟᴇs ⇛", callback_data=f"next_{req}_{key}_{offset}")
+        InlineKeyboardButton("⇚ ʙᴀᴄᴋ ᴛᴏ ғɪʟᴇs ⇛", callback_data=f"fl#homepage#{key}")
     ]]
     try:
         await query.edit_message_reply_markup(
@@ -1190,7 +1190,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('• sᴜᴘᴘᴏʀᴛ •', callback_data='group_info'),
             InlineKeyboardButton('• ᴅɪsᴄʟᴀɪᴍᴇʀ •', callback_data='disc')
         ],[
-            InlineKeyboardButton('⇚ ʜᴏᴍᴇ ᴛᴏ ʜᴏᴍᴇ ⇛', callback_data='start')
+            InlineKeyboardButton('⇚ ʙᴀᴄᴋ ᴛᴏ ʜᴏᴍᴇ ⇛', callback_data='start')
                       
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
