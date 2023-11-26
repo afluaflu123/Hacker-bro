@@ -270,7 +270,7 @@ async def languages_cb_handler(client: Client, query: CallbackQuery):
         InlineKeyboardButton("ᴍᴜʟᴛɪ ᴀᴜᴅɪᴏ", callback_data=f"fl#multi#{key}"),
         InlineKeyboardButton("ᴅᴜᴀʟ ᴀᴜᴅɪᴏ", callback_data=f"fl#dual#{key}")
     ],[
-        InlineKeyboardButton("⇚ ʙᴀᴄᴋ ᴛᴏ ғɪʟᴇs ⇛", callback_data=f"fl#homepage#{key}")
+        InlineKeyboardButton("⇚ ʙᴀᴄᴋ ᴛᴏ ғɪʟᴇs ⇛", callback_data=f"next_{req}_{key}_{offset}")
     ]]
     try:
         await query.edit_message_reply_markup(
