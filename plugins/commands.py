@@ -49,13 +49,13 @@ async def start(client, message):
         buttons = [[
                     InlineKeyboardButton('➕ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ➕', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
                 ],[
-                    InlineKeyboardButton('🔍 sᴇᴀʀᴄʜ ʜᴇʀᴇ', switch_inline_query_current_chat=''),
-                    InlineKeyboardButton('🦅 ʙᴏᴛ ᴏᴡɴᴇʀ', callback_data='owner_info')
+                    InlineKeyboardButton(' sᴇᴀʀᴄʜ ʜᴇʀᴇ', switch_inline_query_current_chat=''),
+                    InlineKeyboardButton('ʙᴏᴛ ᴏᴡɴᴇʀ', callback_data='owner_info')
                 ],[
-                    InlineKeyboardButton('🪄 ʜᴇʟᴘ', callback_data='help'),
-                    InlineKeyboardButton('⚒ ᴀʙᴏᴜᴛ', callback_data='about')
+                    InlineKeyboardButton('ʜᴇʟᴘ', callback_data='help'),
+                    InlineKeyboardButton('ᴀʙᴏᴜᴛ', callback_data='about')
                 ],[
-                    InlineKeyboardButton('💰 ᴇᴀʀɴ ᴍᴏɴᴇʏ ᴡɪᴛʜ ʙᴏᴛ 💰', callback_data='money')
+                    InlineKeyboardButton('ᴇᴀʀɴ ᴍᴏɴᴇʏ ᴡɪᴛʜ ʙᴏᴛ', callback_data='money')
                   ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply_photo(
@@ -98,13 +98,13 @@ async def start(client, message):
         buttons = [[
                     InlineKeyboardButton('➕ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ➕', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
                 ],[
-                    InlineKeyboardButton('🔍 sᴇᴀʀᴄʜ ʜᴇʀᴇ', switch_inline_query_current_chat=''),
-                    InlineKeyboardButton('🦅 ʙᴏᴛ ᴏᴡɴᴇʀ', callback_data='owner_info')
+                    InlineKeyboardButton('sᴇᴀʀᴄʜ ʜᴇʀᴇ', switch_inline_query_current_chat=''),
+                    InlineKeyboardButton('ʙᴏᴛ ᴏᴡɴᴇʀ', callback_data='owner_info')
                 ],[
-                    InlineKeyboardButton('🪄 ʜᴇʟᴘ', callback_data='help'),
-                    InlineKeyboardButton('⚒ ᴀʙᴏᴜᴛ', callback_data='about')
+                    InlineKeyboardButton('ʜᴇʟᴘ', callback_data='help'),
+                    InlineKeyboardButton('ᴀʙᴏᴜᴛ', callback_data='about')
                 ],[
-                    InlineKeyboardButton('💰 ᴇᴀʀɴ ᴍᴏɴᴇʏ ᴡɪᴛʜ ʙᴏᴛ 💰', callback_data='money')
+                    InlineKeyboardButton('ᴇᴀʀɴ ᴍᴏɴᴇʏ ᴡɪᴛʜ ʙᴏᴛ', callback_data='money')
                   ]]
         reply_markup = InlineKeyboardMarkup(buttons)      
         await message.reply_photo(
@@ -331,10 +331,11 @@ async def start(client, message):
                 )
             )
             filesarr.append(msg)
-        await client.send_message(chat_id = message.from_user.id, text=f"<b>ㅤㅤ❗❕<u>IMPORTANT</u>❕❕\n\nThis File Will Be Deleted From Here Within <u>10 Minute</u>. Please Forward This File To Your Saved Messages And Start Download There.</b>")
+        k = await client.send_message(chat_id = message.from_user.id, text=f"<b>ㅤㅤ❕❕<u>IMPORTANT</u>❕❕\n\nThis File Will Be Deleted From Here Within <u>10 Minute</u>. Please Forward This File To Your Saved Messages And Start Download There.</b>")
         await asyncio.sleep(200)
         for x in filesarr:
             await x.delete()
+            await k.delete()
         return    
         
     elif data.startswith("files"):
@@ -438,12 +439,12 @@ async def start(client, message):
         reply_markup=InlineKeyboardMarkup(
             [
              [
-              InlineKeyboardButton("Mᴏᴠɪᴇ Rᴇᴏ̨ᴜᴇsᴛ Gʀᴏᴜᴘ", url="t.me/Team_KL")
+              InlineKeyboardButton("Mᴏᴠɪᴇ Rᴇᴏ̨ᴜᴇsᴛ Cʜᴀɴɴᴇʟ", url="t.me/Team_KL")
              ]
             ]
         )
     )
-    k = await msg.reply("<b>ㅤㅤ❕❕<u>IMPORTANT</u>❕❕\n\nThis File Will Be Deleted From Here Within <u>10 Minute</u>. Please Forward This File To Your Saved Messages And Start Download There.\n\n➥ ʜᴏᴡ ᴛᴏ ғᴏʀᴡᴀʀᴅ :  <a href=https://t.me/TelegramTips/242>ᴄʟɪᴄᴋ ʜᴇʀᴇ</a></b>",quote=True)
+    k = await msg.reply("<b>ㅤㅤ❕❕<u>ɪᴍᴘᴏʀᴛᴀɴᴛ</u>❕❕\n\nᴛʜɪs ғɪʟᴇ ᴡɪʟʟ ʙᴇ ᴅᴇʟᴇᴛᴇᴅ ғʀᴏᴍ ʜᴇʀᴇ ᴡɪᴛʜɪɴ <u>𝟷𝟶 ᴍɪɴᴜᴛᴇ</u>. ᴘʟᴇᴀsᴇ ғᴏʀᴡᴀʀᴅ ᴛʜɪs ғɪʟᴇ ᴛᴏ ʏᴏᴜʀ sᴀᴠᴇᴅ ᴍᴇssᴀɢᴇs ᴀɴᴅ sᴛᴀʀᴛ ᴅᴏᴡɴʟᴏᴀᴅ ᴛʜᴇʀᴇ.</b>",quote=True)
     await asyncio.sleep(200)
     await msg.delete()
     await k.delete()    
