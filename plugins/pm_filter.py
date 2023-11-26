@@ -1102,7 +1102,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await query.answer(text=script.REQINFO, show_alert=True)
 
     elif query.data == "money": 
-        await query.answer(f"✯ 𝙏𝙝𝙞𝙨 𝘽𝙪𝙩𝙩𝙤𝙣 𝙇𝙤𝙘𝙠𝙚𝙙 🔒",show_alert=True)
+        await query.answer(f"𝙏𝙝𝙞𝙨 𝘽𝙪𝙩𝙩𝙤𝙣 𝙇𝙤𝙘𝙠𝙚𝙙 🔒",show_alert=True)
         
     elif query.data == "select":
         await query.answer(text=script.SELECT, show_alert=True)
@@ -1172,7 +1172,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('ʀᴜʟᴇs', callback_data='rule_btn'),          
             InlineKeyboardButton('sᴇᴛᴛɪɴɢs', callback_data='setting_btn')
         ], [
-            InlineKeyboardButton('⇚ ʜᴏᴍᴇ ᴛᴏ ʜᴏᴍᴇ ⇛', callback_data='start')
+            InlineKeyboardButton('⇚ ʙᴀᴄᴋ ᴛᴏ ʜᴏᴍᴇ ⇛', callback_data='start')
         ]]        
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
