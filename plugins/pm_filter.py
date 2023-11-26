@@ -1197,11 +1197,12 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "about":
         buttons = [[
+            InlineKeyboardButton('sᴜᴘᴘᴏʀᴛ', callback_data='group_info'),
             InlineKeyboardButton('sᴏᴜʀᴄᴇ ᴄᴏᴅᴇ', callback_data='source'),
             InlineKeyboardButton('sᴛᴀᴛᴜs', callback_data='stats')
         ],[
             InlineKeyboardButton('ʜᴏᴍᴇ', callback_data='start'),
-            InlineKeyboardButton('ᴅɪsᴄʟᴀɪᴍᴇʀ', callback_data='disc'),            
+            InlineKeyboardButton('ᴅɪsᴄʟᴀɪᴍᴇʀ', callback_data='disc')          
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
@@ -1297,6 +1298,31 @@ async def cb_handler(client: Client, query: CallbackQuery):
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
             text=script.RULE_TXT,
+            reply_markup=reply_markup,
+            parse_mode=enums.ParseMode.HTML
+        )
+    elif query.data == "group_info":
+        buttons = [[
+            InlineKeyboardButton("⟁ sᴜʙsᴄʀɪʙᴇ ʏᴏᴜᴛᴜʙᴇ ᴄʜᴀɴɴᴇʟ ⟁", url="https://youtube.com/shorts/v66wWBXzVYY?si=s5hpGq5p1jCFe6fR")         
+                  ],[
+            InlineKeyboardButton("• ɢʀᴏᴜᴘ 𝟷 •", url="https://t.me/KLMovieGroup"),
+            InlineKeyboardButton("• ɢʀᴏᴜᴘ 𝟸 •", url="https://t.me/KL_Group2")
+                  ],[           
+            InlineKeyboardButton("• ʀᴇǫᴜᴇsᴛ ᴛᴏ ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟ •", url="https://t.me/+AELuZYsjP3Q1OWZl")
+                  ],[
+            InlineKeyboardButton("• ᴄʜᴀɴɴᴇʟ 𝟷 •", url="t.me/team_kl"),
+            InlineKeyboardButton("• ᴄʜᴀɴɴᴇʟ 𝟸 •", url="t.me/team_kr")
+                  ],[
+            InlineKeyboardButton("⇍ ʙᴀᴄᴋ ᴛᴏ ᴀʙᴏᴜᴛ ⇏", callback_data="about")
+        ]]   
+        reply_markup = InlineKeyboardMarkup(buttons)
+        await client.edit_message_media(
+            query.message.chat.id, 
+            query.message.id, 
+            InputMediaPhoto("https://telegra.ph/file/77cc64695805008a00774.jpg")
+        )
+        await query.message.edit_text(
+            text=script.GROUP_INFO,
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
         )
