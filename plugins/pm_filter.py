@@ -1196,11 +1196,11 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "about":
         buttons = [[
-            InlineKeyboardButton('sᴛᴀᴛᴜs', callback_data='stats'),
-            InlineKeyboardButton('sᴏᴜʀᴄᴇ ᴄᴏᴅᴇ', callback_data='source')                                 
+            InlineKeyboardButton('• sᴛᴀᴛᴜs •', callback_data='stats'),
+            InlineKeyboardButton('• sᴏᴜʀᴄᴇ ᴄᴏᴅᴇ •', callback_data='source')                                 
         ],[
-            InlineKeyboardButton('sᴜᴘᴘᴏʀᴛ', callback_data='group_info'),
-            InlineKeyboardButton('ᴅɪsᴄʟᴀɪᴍᴇʀ', callback_data='disc')
+            InlineKeyboardButton('• sᴜᴘᴘᴏʀᴛ •', callback_data='group_info'),
+            InlineKeyboardButton('• ᴅɪsᴄʟᴀɪᴍᴇʀ •', callback_data='disc')
         ],[
             InlineKeyboardButton('⇚ ʜᴏᴍᴇ ᴛᴏ ʜᴏᴍᴇ ⇛', callback_data='start')
                       
