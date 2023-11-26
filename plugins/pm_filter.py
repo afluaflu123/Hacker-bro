@@ -1128,13 +1128,13 @@ async def cb_handler(client: Client, query: CallbackQuery):
         buttons = [[
                     InlineKeyboardButton('➕ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ➕', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
                 ],[
-                    InlineKeyboardButton('sᴇᴀʀᴄʜ ʜᴇʀᴇ', switch_inline_query_current_chat=''),
-                    InlineKeyboardButton('ʙᴏᴛ ᴏᴡɴᴇʀ', callback_data='owner_info')
+                    InlineKeyboardButton('• sᴇᴀʀᴄʜ ʜᴇʀᴇ •', switch_inline_query_current_chat=''),
+                    InlineKeyboardButton('• ᴏᴡɴᴇʀ •', callback_data='owner_info')
                 ],[
-                    InlineKeyboardButton('ʜᴇʟᴘ', callback_data='help'),
-                    InlineKeyboardButton('ᴀʙᴏᴜᴛ', callback_data='about')
+                    InlineKeyboardButton('• ʜᴇʟᴘ •', callback_data='help'),
+                    InlineKeyboardButton('• ᴀʙᴏᴜᴛ •', callback_data='about')
                 ],[
-                    InlineKeyboardButton('ᴇᴀʀɴ ᴍᴏɴᴇʏ ᴡɪᴛʜ ʙᴏᴛ', callback_data='money')
+                    InlineKeyboardButton('💰 ᴇᴀʀɴ ᴍᴏɴᴇʏ ᴡɪᴛʜ ʙᴏᴛ 💸', callback_data='money')
                   ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await client.edit_message_media(
@@ -1186,8 +1186,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('ʀᴜʟᴇs', callback_data='rule_btn'),          
             InlineKeyboardButton('sᴇᴛᴛɪɴɢs', callback_data='setting_btn')
         ], [
-            InlineKeyboardButton('⇚ ʜᴏᴍᴇ', callback_data='start'),
-            InlineKeyboardButton('ʜᴏᴡ ᴛᴏ ᴜsᴇ ᴍᴇ', callback_data='setting_btn')
+            InlineKeyboardButton('⇚ ʜᴏᴍᴇ ᴛᴏ ʜᴏᴍᴇ ⇛', callback_data='start')
         ]]        
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
@@ -1197,13 +1196,14 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "about":
         buttons = [[
-            InlineKeyboardButton('sᴜᴘᴘᴏʀᴛ', callback_data='group_info'),            
-            InlineKeyboardButton('sᴛᴀᴛᴜs', callback_data='stats')
+            InlineKeyboardButton('sᴛᴀᴛᴜs', callback_data='stats'),
+            InlineKeyboardButton('sᴏᴜʀᴄᴇ ᴄᴏᴅᴇ', callback_data='source')                                 
         ],[
-            InlineKeyboardButton('sᴏᴜʀᴄᴇ ᴄᴏᴅᴇ', callback_data='source')
+            InlineKeyboardButton('sᴜᴘᴘᴏʀᴛ', callback_data='group_info'),
+            InlineKeyboardButton('ᴅɪsᴄʟᴀɪᴍᴇʀ', callback_data='disc')
         ],[
-            InlineKeyboardButton('⇚ ʜᴏᴍᴇ', callback_data='start'),
-            InlineKeyboardButton('ᴅɪsᴄʟᴀɪᴍᴇʀ', callback_data='disc')          
+            InlineKeyboardButton('⇚ ʜᴏᴍᴇ ᴛᴏ ʜᴏᴍᴇ ⇛', callback_data='start')
+                      
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await client.edit_message_media(
