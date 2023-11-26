@@ -1197,14 +1197,20 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "about":
         buttons = [[
-            InlineKeyboardButton('sᴜᴘᴘᴏʀᴛ', callback_data='group_info'),
-            InlineKeyboardButton('sᴏᴜʀᴄᴇ ᴄᴏᴅᴇ', callback_data='source'),
+            InlineKeyboardButton('sᴜᴘᴘᴏʀᴛ', callback_data='group_info'),            
             InlineKeyboardButton('sᴛᴀᴛᴜs', callback_data='stats')
+        ],[
+            InlineKeyboardButton('sᴏᴜʀᴄᴇ ᴄᴏᴅᴇ', callback_data='source')
         ],[
             InlineKeyboardButton('ʜᴏᴍᴇ', callback_data='start'),
             InlineKeyboardButton('ᴅɪsᴄʟᴀɪᴍᴇʀ', callback_data='disc')          
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
+        await client.edit_message_media(
+            query.message.chat.id, 
+            query.message.id, 
+            InputMediaPhoto(random.choice(PICS))
+        )
         await query.message.edit_text(
             text=script.ABOUT_TXT.format(temp.B_NAME),
             reply_markup=reply_markup,
