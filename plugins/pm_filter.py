@@ -1,4 +1,4 @@
-# Kanged From @TroJanZheX
+# Kanged From @Hacker_Jr
 import asyncio
 import re
 import ast
@@ -1181,13 +1181,13 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('ғɪʟᴇ sᴛᴏʀᴇ', callback_data='store_file')
         ], [
             InlineKeyboardButton('ᴄᴏɴɴᴇᴄᴛɪᴏɴ', callback_data='coct'),
-            InlineKeyboardButton('ᴀᴅᴍɪɴ ᴘᴀɴᴇʟ', callback_data='admin')
-        ], [
-            InlineKeyboardButton('ʀᴜʟᴇs', callback_data='rule_btn'),          
             InlineKeyboardButton('ᴇxᴛʀᴀ ᴍᴏᴅs', callback_data='extra')
         ], [
-            InlineKeyboardButton('⇚ ʜᴏᴍᴇ', callback_data='start'),
+            InlineKeyboardButton('ʀᴜʟᴇs', callback_data='rule_btn'),          
             InlineKeyboardButton('sᴇᴛᴛɪɴɢs', callback_data='setting_btn')
+        ], [
+            InlineKeyboardButton('⇚ ʜᴏᴍᴇ', callback_data='start'),
+            InlineKeyboardButton('ʜᴏᴡ ᴛᴏ ᴜsᴇ ᴍᴇ', callback_data='setting_btn')
         ]]        
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
@@ -1284,7 +1284,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "extra":
         buttons = [[
-            InlineKeyboardButton('⇚ ʙᴀᴄᴋ​', callback_data='help')
+            InlineKeyboardButton('⇚ ʙᴀᴄᴋ​', callback_data='help'),
+            InlineKeyboardButton('ᴀᴅᴍɪɴ ᴘᴀɴᴇʟ', callback_data='admin')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
@@ -1314,7 +1315,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "group_info":
         buttons = [[
-            InlineKeyboardButton("⟁ sᴜʙsᴄʀɪʙᴇ ʏᴏᴜᴛᴜʙᴇ ᴄʜᴀɴɴᴇʟ ⟁", url="https://youtube.com/shorts/v66wWBXzVYY?si=s5hpGq5p1jCFe6fR")         
+            InlineKeyboardButton(" sᴜʙsᴄʀɪʙᴇ ʏᴏᴜᴛᴜʙᴇ ᴄʜᴀɴɴᴇʟ ", url="https://youtube.com/shorts/v66wWBXzVYY?si=s5hpGq5p1jCFe6fR")         
                   ],[
             InlineKeyboardButton("• ɢʀᴏᴜᴘ 𝟷 •", url="https://t.me/KLMovieGroup"),
             InlineKeyboardButton("• ɢʀᴏᴜᴘ 𝟸 •", url="https://t.me/KL_Group2")
@@ -1364,7 +1365,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             await query.answer("𝘾𝙪𝙧𝙧𝙚𝙣𝙩𝙡𝙮 𝘿𝙞𝙨𝙖𝙗𝙡𝙚𝙙 🤭", show_alert=True)  
     elif query.data == "admin":
         buttons = [[
-            InlineKeyboardButton('⇚ ʙᴀᴄᴋ​', callback_data='help')
+            InlineKeyboardButton('⇚ ʙᴀᴄᴋ​', callback_data='extra')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         if query.from_user.id in ADMINS:
