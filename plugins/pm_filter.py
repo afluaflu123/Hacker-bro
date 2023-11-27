@@ -118,8 +118,8 @@ async def next_page(bot, query):
             ]
         )
         btn.insert(0, [
-            InlineKeyboardButton(f'⇓ {search} ⇓', 'info'),
-            InlineKeyboardButton(f'✇ Iᥒf᧐', 'reqinfo')
+            InlineKeyboardButton(f'⇓ {search} ⇓', 'qinfo'),
+            InlineKeyboardButton(f'✇ Iᥒf᧐', 'info')
         ])
     else:
         btn = []
@@ -131,8 +131,8 @@ async def next_page(bot, query):
             ]
         )
         btn.insert(0, [
-            InlineKeyboardButton(f'⇓ {search} ⇓', 'info'),
-            InlineKeyboardButton(f'✇ Iᥒf᧐', 'reqinfo')       
+            InlineKeyboardButton(f'⇓ {search} ⇓', 'qinfo'),
+            InlineKeyboardButton(f'✇ Iᥒf᧐', 'info')       
         ])
     try:
         if settings['max_btn']:
@@ -334,8 +334,8 @@ async def filter_languages_cb_handler(client: Client, query: CallbackQuery):
             ]
         )
         btn.insert(0, [
-            InlineKeyboardButton(f'⇓ {search} ⇓', 'info'),
-            InlineKeyboardButton(f'✇ Iᥒf᧐', 'reqinfo')
+            InlineKeyboardButton(f'⇓ {search} ⇓', 'qinfo'),
+            InlineKeyboardButton(f'✇ Iᥒf᧐', 'info')
         ])
     else:
         btn = []
@@ -347,8 +347,8 @@ async def filter_languages_cb_handler(client: Client, query: CallbackQuery):
             ]
         )
         btn.insert(0, [
-            InlineKeyboardButton(f'⇓ {search} ⇓', 'info'),
-            InlineKeyboardButton(f'✇ Iᥒf᧐', 'reqinfo')
+            InlineKeyboardButton(f'⇓ {search} ⇓', 'qinfo'),
+            InlineKeyboardButton(f'✇ Iᥒf᧐', 'info')
         ])
 
     if offset != "":
@@ -471,8 +471,8 @@ async def filter_quality_cb_handler(client: Client, query: CallbackQuery):
             ]
         )
         btn.insert(0, [
-            InlineKeyboardButton(f'⇓ {search} ⇓', 'info'),
-            InlineKeyboardButton(f'✇ Iᥒf᧐', 'reqinfo')
+            InlineKeyboardButton(f'⇓ {search} ⇓', 'qinfo'),
+            InlineKeyboardButton(f'✇ Iᥒf᧐', 'info')
         ])
     else:
         btn = []
@@ -484,25 +484,25 @@ async def filter_quality_cb_handler(client: Client, query: CallbackQuery):
             ]
         )
         btn.insert(0, [
-            InlineKeyboardButton(f'⇓ {search} ⇓', 'info'),
-            InlineKeyboardButton(f'✇ Iᥒf᧐', 'reqinfo')
+            InlineKeyboardButton(f'⇓ {search} ⇓', 'qinfo'),
+            InlineKeyboardButton(f'✇ Iᥒf᧐', 'info')
         ])
 
     if offset != "":
         try:
             if settings['max_btn']:
                 btn.append(
-                    [InlineKeyboardButton("❐ Pᥲgᥱ", callback_data="pages"), InlineKeyboardButton(text=f"1/{math.ceil(int(total_results)/10)}",callback_data="pages"), InlineKeyboardButton(text="𐌽ᥱ᥊ᴛ ​⇛",callback_data=f"next_{req}_{key}_{offset}")]
+                    [InlineKeyboardButton("❐ Pᥲgᥱ", callback_data="pages"), InlineKeyboardButton(text=f"1-{math.ceil(int(total_results)/10)}",callback_data="pages"), InlineKeyboardButton(text="𐌽ᥱ᥊ᴛ ​⇛",callback_data=f"next_{req}_{key}_{offset}")]
                 )
     
             else:
                 btn.append(
-                    [InlineKeyboardButton("❐ Pᥲgᥱ", callback_data="pages"), InlineKeyboardButton(text=f"1/{math.ceil(int(total_results)/int(MAX_B_TN))}",callback_data="pages"), InlineKeyboardButton(text="𐌽ᥱ᥊ᴛ ​⇛",callback_data=f"next_{req}_{key}_{offset}")]
+                    [InlineKeyboardButton("❐ Pᥲgᥱ", callback_data="pages"), InlineKeyboardButton(text=f"1-{math.ceil(int(total_results)/int(MAX_B_TN))}",callback_data="pages"), InlineKeyboardButton(text="𐌽ᥱ᥊ᴛ ​⇛",callback_data=f"next_{req}_{key}_{offset}")]
                 )
         except KeyError:
             await save_group_settings(query.message.chat.id, 'max_btn', True)
             btn.append(
-                [InlineKeyboardButton("❐ Pᥲgᥱ", callback_data="pages"), InlineKeyboardButton(text=f"1/{math.ceil(int(total_results)/10)}",callback_data="pages"), InlineKeyboardButton(text="𐌽ᥱ᥊ᴛ ​⇛",callback_data=f"next_{req}_{key}_{offset}")]
+                [InlineKeyboardButton("❐ Pᥲgᥱ", callback_data="pages"), InlineKeyboardButton(text=f"1-{math.ceil(int(total_results)/10)}",callback_data="pages"), InlineKeyboardButton(text="𐌽ᥱ᥊ᴛ ​⇛",callback_data=f"next_{req}_{key}_{offset}")]
             )
     else:
         btn.append(
@@ -1731,8 +1731,8 @@ async def auto_filter(client, msg, spoll=False):
             ]              
         )
         btn.insert(0, [
-            InlineKeyboardButton(f'⇓ {search} ⇓', 'pages'),
-            InlineKeyboardButton(f'✇ Iᥒf᧐', 'reqinfo')
+            InlineKeyboardButton(f'⇓ {search} ⇓', 'qinfo'),
+            InlineKeyboardButton(f'✇ Iᥒf᧐', 'info')
         ])
     else:
         btn = []
@@ -1744,8 +1744,8 @@ async def auto_filter(client, msg, spoll=False):
             ]
         )
         btn.insert(0, [
-            InlineKeyboardButton(f'⇓ {search} ⇓', 'info'),
-            InlineKeyboardButton(f'✇ Iᥒf᧐', 'reqinfo')
+            InlineKeyboardButton(f'⇓ {search} ⇓', 'qinfo'),
+            InlineKeyboardButton(f'✇ Iᥒf᧐', 'info')
         ])
     if offset != "":
         req = message.from_user.id if message.from_user else 0
