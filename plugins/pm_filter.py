@@ -112,29 +112,27 @@ async def next_page(bot, query):
 
         btn.insert(0, 
             [
-                InlineKeyboardButton(f'sᴇʟᴇᴄᴛ⇛', 'select'),
-                InlineKeyboardButton("ʟᴀɴɢᴜᴀɢᴇs", callback_data=f"languages#{key}"),
-                InlineKeyboardButton("sᴇᴀsᴏɴs", callback_data=f"seasons#{key}")                
+                InlineKeyboardButton("𑀉ᥲᥒgᥙᥲgᥱs", callback_data=f"languages#{key}"),
+                InlineKeyboardButton("𐍃ᥱᥲs᧐ᥒs", callback_data=f"seasons#{key}"),
+                InlineKeyboardButton("Fiᥣᥱ Qᥙᥲᥣiᴛy", callback_data=f"quality#{key}")
             ]
         )
         btn.insert(0, [
-            InlineKeyboardButton(f'𝀘 {search} 𝀘', 'info'),
-            InlineKeyboardButton(f'ɪɴꜰᴏ', 'reqinfo'),
-            InlineKeyboardButton("Qᥙᥲᥣiᴛy", callback_data=f"quality#{key}")
+            InlineKeyboardButton(f'⇓ {search} ⇓', 'info'),
+            InlineKeyboardButton(f'✇ Iᥒf᧐', 'reqinfo')
         ])
     else:
         btn = []
         btn.insert(0, 
             [               
-                InlineKeyboardButton(f'sᴇʟᴇᴄᴛ⇛', 'select'),
-                InlineKeyboardButton("ʟᴀɴɢᴜᴀɢᴇs", callback_data=f"languages#{key}"),
-                InlineKeyboardButton("sᴇᴀsᴏɴs", callback_data=f"seasons#{key}")
+                InlineKeyboardButton("𑀉ᥲᥒgᥙᥲgᥱs", callback_data=f"languages#{key}"),
+                InlineKeyboardButton("𐍃ᥱᥲs᧐ᥒs", callback_data=f"seasons#{key}"),
+                InlineKeyboardButton("Fiᥣᥱ Qᥙᥲᥣiᴛy", callback_data=f"quality#{key}")
             ]
         )
         btn.insert(0, [
-            InlineKeyboardButton(f'𝀘 {search} 𝀘', 'info'),
-            InlineKeyboardButton(f'ɪɴꜰᴏ', 'reqinfo'),
-            InlineKeyboardButton("Qᥙᥲᥣiᴛy", callback_data=f"quality#{key}")
+            InlineKeyboardButton(f'⇓ {search} ⇓', 'info'),
+            InlineKeyboardButton(f'✇ Iᥒf᧐', 'reqinfo')       
         ])
     try:
         if settings['max_btn']:
@@ -1699,29 +1697,27 @@ async def auto_filter(client, msg, spoll=False):
         ]
         btn.insert(0, 
             [
-                InlineKeyboardButton(f'sᴇʟᴇᴄᴛ⇛', 'select'),
-                InlineKeyboardButton("ʟᴀɴɢᴜᴀɢᴇs", callback_data=f"languages#{key}"),
-                InlineKeyboardButton("sᴇᴀsᴏɴs", callback_data=f"seasons#{key}")
-            ]
+                InlineKeyboardButton("𑀉ᥲᥒgᥙᥲgᥱs", callback_data=f"languages#{key}"),
+                InlineKeyboardButton("𐍃ᥱᥲs᧐ᥒs", callback_data=f"seasons#{key}"),
+                InlineKeyboardButton("Fiᥣᥱ Qᥙᥲᥣiᴛy", callback_data=f"quality#{key}")
+            ]              
         )
         btn.insert(0, [
-            InlineKeyboardButton(f'𝀘 {search} 𝀘', 'info'),
-            InlineKeyboardButton(f'ɪɴꜰᴏ', 'reqinfo'),
-            InlineKeyboardButton("Qᥙᥲᥣiᴛy", callback_data=f"quality#{key}")
+            InlineKeyboardButton(f'⇓ {search} ⇓', 'pages'),
+            InlineKeyboardButton(f'✇ Iᥒf᧐', 'reqinfo')
         ])
     else:
         btn = []
         btn.insert(0, 
             [
-                InlineKeyboardButton(f'sᴇʟᴇᴄᴛ⇛', 'select'),
-                InlineKeyboardButton("ʟᴀɴɢᴜᴀɢᴇs", callback_data=f"languages#{key}"),
-                InlineKeyboardButton("sᴇᴀsᴏɴs", callback_data=f"seasons#{key}")
+                InlineKeyboardButton("𑀉ᥲᥒgᥙᥲgᥱs", callback_data=f"languages#{key}"),
+                InlineKeyboardButton("𐍃ᥱᥲs᧐ᥒs", callback_data=f"seasons#{key}"),
+                InlineKeyboardButton("Fiᥣᥱ Qᥙᥲᥣiᴛy", callback_data=f"quality#{key}")
             ]
         )
         btn.insert(0, [
-            InlineKeyboardButton(f'𝀘 {search} 𝀘', 'info'),
-            InlineKeyboardButton(f'ɪɴꜰᴏ', 'reqinfo'),
-            InlineKeyboardButton("Qᥙᥲᥣiᴛy", callback_data=f"quality#{key}")
+            InlineKeyboardButton(f'⇓ {search} ⇓', 'info'),
+            InlineKeyboardButton(f'✇ Iᥒf᧐', 'reqinfo')
         ])
     if offset != "":
         req = message.from_user.id if message.from_user else 0
