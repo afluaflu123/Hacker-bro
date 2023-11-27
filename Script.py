@@ -173,8 +173,6 @@ OTT പ്ലാറ്റ്‌ഫോമിൽ റിലീസ് ചെയ്�
 
     TOP_ALRT_MSG = """Cʜᴇᴄᴋɪɴɢ Fᴏʀ Mᴏᴠɪᴇ Iɴ Dᴀᴛᴀʙᴀsᴇ..."""
 
-    MELCOW_ENG = """<b>Hᴇʟʟᴏ {} 😍, Aɴᴅ Wᴇʟᴄᴏᴍᴇ Tᴏ {} Gʀᴏᴜᴘ ❤️</b>"""
-
     SHORTLINK_INFO = """
 <b>ʜᴏᴡ ᴛᴏ ᴇᴀʀɴ ᴍᴏɴᴇʏ ꜰʀᴏᴍ ᴏᴜʀ ʙᴏᴛ.
 
@@ -196,8 +194,6 @@ OTT പ്ലാറ്റ്‌ഫോമിൽ റിലീസ് ചെയ്�
 
 ⎆ Not Available Theater Print Files 
 
-⎆ After 3 Minutes This Message Will Be Automatically Deleted
-
 © Team_KL"""
 
     SELECT = """ᴍᴏᴠɪᴇs ➢ sᴇʟᴇᴄᴛ "ʟᴀɴɢᴜᴀɢᴇs"
@@ -205,14 +201,13 @@ OTT പ്ലാറ്റ്‌ഫോമിൽ റിലീസ് ചെയ്�
 sᴇʀɪᴇs ➢ sᴇʟᴇᴄᴛ "sᴇᴀsᴏɴs"
 ᴛɪᴘ: sᴇʟᴇᴄᴛ "ʟᴀɴɢᴜᴀɢᴇs" ᴏʀ "sᴇᴀsᴏɴs" ʙᴜᴛᴛᴏɴ ᴀɴᴅ ᴄʟɪᴄᴋ ᴛᴏ ɢᴇᴛ ᴀʟʟ ғɪʟᴇ ʟɪɴᴋs ɪɴ ᴀ sɪɴɢʟᴇ ᴄʟɪᴄᴋ"""
 
-    INFO = """
-► Movies : Leo Tamil or Leo 2023
+    REQINFO = """► 𝖢𝗅𝗂𝖼𝗄 𐌏𝗇 T𝗁𝖾 "Fiᥣᥱ 𐌽ᥲⲙᥱ" B𝖾𝗅𝗈𝗐 B𝗎𝗍𝗍𝗈𝗇 𝖠𝗇𝖽 𝖲𝗍𝖺𝗋𝗍 𝖳𝗁𝖾 𝖡𝗈𝗍.
 
-► Series : Loki S01 or Dark S02E05
+► If Y᧐ᥙ 𑀥᧐ 𐌽᧐ᴛ 𐍃ᥱᥱ Tɦᥱ Rᥱqᥙᥱsᴛᥱɗ 𐌑᧐᥎iᥱ/𐍃ᥱriᥱs Fiᥣᥱ, 𑀉᧐᧐κ Aᴛ Tɦᥱ 𐌽ᥱ᥊ᴛ Pᥲgᥱ.
 
-► 𝖢𝗅𝗂𝖼𝗄 O𝗇 T𝗁𝖾 "File Name" B𝖾𝗅𝗈𝗐 B𝗎𝗍𝗍𝗈𝗇 𝖠𝗇𝖽 𝖲𝗍𝖺𝗋𝗍 𝖳𝗁𝖾 𝖡𝗈𝗍
+► Afᴛᥱr 3 𐌑iᥒᥙᴛᥱs Tɦis 𐌑ᥱssᥲgᥱ Wiᥣᥣ Bᥱ Aᥙᴛ᧐ⲙᥲᴛiᥴᥲᥣᥣy 𑀥ᥱᥣᥱᴛᥱɗ.
 
-© Team_KL"""
+© Team KL"""
 
     NORSLTS = """
 ★ #𝗡𝗼𝗥𝗲𝘀𝘂𝗹𝘁𝘀 ★
