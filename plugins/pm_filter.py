@@ -258,7 +258,7 @@ async def languages_cb_handler(client: Client, query: CallbackQuery):
     if int(query.from_user.id) not in [query.message.reply_to_message.from_user.id, 0]:
         return await query.answer(f"⚠️ ʜᴇʟʟᴏ{query.from_user.first_name},\nᴛʜɪꜱ ɪꜱ ɴᴏᴛ ʏᴏᴜʀ ᴍᴏᴠɪᴇ ʀᴇqᴜᴇꜱᴛ ʏᴏᴜʀ'ꜱ...", show_alert=True)
     btn = [[
-        InlineKeyboardButton("↓sᴇʟᴇᴄᴛ ʏᴏᴜʀ ᴅᴇsɪʀᴇᴅ ʟᴀɴɢᴜᴀɢᴇs↓", callback_data=f"fl#unknown#{key}")
+        InlineKeyboardButton("↓𐍃ᥱᥣᥱᥴᴛ Y᧐ᥙr 𑀥ᥱsirᥱɗ 𑀉ᥲᥒgᥙᥲgᥱs↓", callback_data=f"fl#unknown#{key}")
     ],[
         InlineKeyboardButton("ᴍᴀʟᴀʏᴀʟᴀᴍ", callback_data=f"fl#mal#{key}"),
         InlineKeyboardButton("ᴛᴀᴍɪʟ", callback_data=f"fl#tam#{key}")
@@ -398,7 +398,7 @@ async def quality_cb_handler(client: Client, query: CallbackQuery):
     if int(query.from_user.id) not in [query.message.reply_to_message.from_user.id, 0]:
         return await query.answer(f"⚠️ ʜᴇʟʟᴏ{query.from_user.first_name},\nᴛʜɪꜱ ɪꜱ ɴᴏᴛ ʏᴏᴜʀ ᴍᴏᴠɪᴇ ʀᴇqᴜᴇꜱᴛ ʏᴏᴜʀ'ꜱ...", show_alert=True)
     btn = [[
-        InlineKeyboardButton("↓sᴇʟᴇᴄᴛ ʏᴏᴜʀ ᴅᴇsɪʀᴇᴅ Qᥙᥲᥣiᴛy↓", callback_data=f"fl#unknown#{key}")
+        InlineKeyboardButton("↓𐍃ᥱᥣᥱᥴᴛ Y᧐ᥙr 𑀥ᥱsirᥱɗ Qᥙᥲᥣiᴛy↓", callback_data=f"fl#unknown#{key}")
     ],[
         InlineKeyboardButton("360p", callback_data=f"fq#360p#{key}"),
         InlineKeyboardButton("480p", callback_data=f"fq#480p#{key}")
@@ -565,7 +565,7 @@ async def seasons_cb_handler(client: Client, query: CallbackQuery):
         0,
         [
             InlineKeyboardButton(
-                text="sᴇʟᴇᴄᴛ ʏᴏᴜʀ ᴅᴇsɪʀᴇᴅ sᴇᴀsᴏɴs", callback_data="ident"
+                text="Select Your Desired 𐍃ᥱᥲs᧐ᥒs", callback_data="ident"
             )
         ],
     )
@@ -1752,16 +1752,16 @@ async def auto_filter(client, msg, spoll=False):
         try:
             if settings['max_btn']:
                 btn.append(
-                    [InlineKeyboardButton("❐ Pᥲgᥱ", callback_data="pages"), InlineKeyboardButton(text=f"1/{math.ceil(int(total_results)/10)}",callback_data="pages"), InlineKeyboardButton(text="𐌽ᥱ᥊ᴛ​ ⇛",callback_data=f"next_{req}_{key}_{offset}")]
+                    [InlineKeyboardButton("❐ Pᥲgᥱ", callback_data="pages"), InlineKeyboardButton(text=f"1-{math.ceil(int(total_results)/10)}",callback_data="pages"), InlineKeyboardButton(text="𐌽ᥱ᥊ᴛ​ ⇛",callback_data=f"next_{req}_{key}_{offset}")]
                 )
             else:
                 btn.append(
-                    [InlineKeyboardButton("❐ Pᥲgᥱ", callback_data="pages"), InlineKeyboardButton(text=f"1/{math.ceil(int(total_results)/int(MAX_B_TN))}",callback_data="pages"), InlineKeyboardButton(text="𐌽ᥱ᥊ᴛ​ ⇛",callback_data=f"next_{req}_{key}_{offset}")]
+                    [InlineKeyboardButton("❐ Pᥲgᥱ", callback_data="pages"), InlineKeyboardButton(text=f"1-{math.ceil(int(total_results)/int(MAX_B_TN))}",callback_data="pages"), InlineKeyboardButton(text="𐌽ᥱ᥊ᴛ​ ⇛",callback_data=f"next_{req}_{key}_{offset}")]
                 )
         except KeyError:
             await save_group_settings(message.chat.id, 'max_btn', True)
             btn.append(
-                [InlineKeyboardButton("❐ Pᥲgᥱ", callback_data="pages"), InlineKeyboardButton(text=f"1/{math.ceil(int(total_results)/10)}",callback_data="pages"), InlineKeyboardButton(text="𐌽ᥱ᥊ᴛ​ ⇛",callback_data=f"next_{req}_{key}_{offset}")]
+                [InlineKeyboardButton("❐ Pᥲgᥱ", callback_data="pages"), InlineKeyboardButton(text=f"1-{math.ceil(int(total_results)/10)}",callback_data="pages"), InlineKeyboardButton(text="𐌽ᥱ᥊ᴛ​ ⇛",callback_data=f"next_{req}_{key}_{offset}")]
             )
     else:
         btn.append(
@@ -1811,7 +1811,7 @@ async def auto_filter(client, msg, spoll=False):
                 cap += f"<b>\n📁 <a href='https://telegram.me/{temp.U_NAME}?start=files_{file.file_id}'>[{get_size(file.file_size)}] {' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@') and not x.startswith('www.'), file.file_name.split()))}\n</a></b>"
     else:
         if settings["button"]:
-            cap = f"<b>ᴛɪᴛʟᴇ : {search}\nᴀsᴋᴇᴅ ʙʏ : {message.from_user.mention}\nғᴏᴛᴀʟ ғɪʟᴇs : {total_results}\nʀᴇsᴜʟᴛ sʜᴏᴡ : {remaining_seconds}ss\nᴘᴏᴡᴇʀᴇᴅ ʙʏ : [ᴋᴇʀᴀʟᴀ ʀᴏᴄᴋᴇʀs](https://t.me/KLMovieGroup)</b>"
+            cap = f"<b>◉ ᴛɪᴛʟᴇ : {search}\n◉ ᴀsᴋᴇᴅ ʙʏ : {message.from_user.mention}\n◉ ᴛᴏᴛᴀʟ ғɪʟᴇs : {total_results}\n◉ ʀᴇsᴜʟᴛ sʜᴏᴡ : {remaining_seconds}ss\n◉ ᴘᴏᴡᴇʀᴇᴅ ʙʏ : [ᴋᴇʀᴀʟᴀ ʀᴏᴄᴋᴇʀs](https://t.me/KLMovieGroup)</b>"
         else:
             cap = f"<b>Hᴇʏ {message.from_user.mention}, Fᴏᴜɴᴅ {total_results} Rᴇsᴜʟᴛs ғᴏʀ Yᴏᴜʀ Qᴜᴇʀʏ {search}\n\n</b>"
             cap+="<b><u>📚 Requested Files 👇</u></b>\n\n"
