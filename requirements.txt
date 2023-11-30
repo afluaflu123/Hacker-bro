@@ -5,10 +5,13 @@ motor==2.5.1
 marshmallow==3.14.1
 umongo==3.0.1
 Pillow==10.0.1
+psutil==5.9.4
+aiohttp==3.7.4
+aiofiles
 requests
 bs4
 cinemagoer==2023.5.1
 shortzy
 datetime
 pytz
-aiohttp
+
