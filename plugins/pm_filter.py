@@ -608,7 +608,7 @@ async def filter_seasons_cb_handler(client: Client, query: CallbackQuery):
         pass
     if seas == "unknown":
         return await query.answer("sᴇʟᴇᴄᴛ ᴀɴʏ siej ғʀᴏᴍ ᴛʜᴇ ʙᴇʟᴏᴡ ʙᴜᴛᴛᴏɴs !", show_alert=True)
-    if seas != "homepage":
+
     searchagn = search
     search1 = search
     search2 = search
