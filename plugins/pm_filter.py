@@ -5,10 +5,8 @@ import ast
 import math
 import random
 import pytz
-import datetime
-import time
 import psutil, shutil, sys
-import timedelta, date
+from datetime import datetime, timedelta, date, time
 lock = asyncio.Lock()
 
 from pyrogram.errors.exceptions.bad_request_400 import MediaEmpty, PhotoInvalidDimensions, WebpageMediaEmpty
