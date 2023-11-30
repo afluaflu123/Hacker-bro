@@ -568,26 +568,31 @@ async def seasons_cb_handler(client: Client, query: CallbackQuery):
         0,
         [
             InlineKeyboardButton(
-                text="Select Your Desired 𐍃ᥱᥲs᧐ᥒs", callback_data="ident"
+                text="Select Your Desired 𐍃ᥱᥲs᧐ᥒs", callback_data=f"fl#unknown#{key}"
             )
         ],
     )
     req = query.from_user.id
     offset = 0
-    btn.append([InlineKeyboardButton(text="⇚ ʙᴀᴄᴋ ᴛᴏ ғɪʟᴇs ⇛", callback_data=f"next_{req}_{key}_{offset}")])
+    btn.append([InlineKeyboardButton(text="⇚ ʙᴀᴄᴋ ᴛᴏ ғɪʟᴇs ⇛", callback_data=f"fs#homepage#{key}")])
 
     await query.edit_message_reply_markup(InlineKeyboardMarkup(btn))
 
 
 @Client.on_callback_query(filters.regex(r"^fs#"))
 async def filter_seasons_cb_handler(client: Client, query: CallbackQuery):
-    _, lang, key = query.data.split("#")
+    _, seas, key = query.data.split("#")
     curr_time = datetime.now(pytz.timezone('Asia/Kolkata')).time()
     search = FRESH.get(key)
     search = search.replace("_", " ")
-    baal = lang in search
-    if baal:
-        search = search.replace(lang, "")
+    sea = ""
+    season_search = ["s01","s02", "s03", "s04", "s05", "s06", "s07", "s08", "s09", "s10", "season 01","season 02","season 03","season 04","season 05","season 06","season 07","season 08","season 09","season 10", "season 1","season 2","season 3","season 4","season 5","season 6","season 7","season 8","season 9"]
+    for x in range (len(season_search)):
+        if season_search[x] in search:
+            sea = season_search[x]
+            break
+    if sea:
+        search = search.replace(sea, "")
     else:
         search = search
     req = query.from_user.id
@@ -601,13 +606,36 @@ async def filter_seasons_cb_handler(client: Client, query: CallbackQuery):
             )
     except:
         pass
-    if lang == "unknown":
+    if seas == "unknown":
         return await query.answer("sᴇʟᴇᴄᴛ ᴀɴʏ ʟᴀɴɢᴜᴀɢᴇ ғʀᴏᴍ ᴛʜᴇ ʙᴇʟᴏᴡ ʙᴜᴛᴛᴏɴs !", show_alert=True)
-    if lang != "homepage":
-        search = f"{search} {lang}" 
+    if seas != "homepage":
+        searchagn = search
+        search1 = search
+        search2 = search
+        search = f"{search} {seas}" 
     BUTTONS[key] = search
 
     files, offset, total_results = await get_search_results(chat_id, search, offset=0, filter=True)
+    files = [file for file in files if re.search(seas, file.file_name, re.IGNORECASE)]
+    
+    seas1 = "s01" if seas == "season 1" else "s02" if seas == "season 2" else "s03" if seas == "season 3" else "s04" if seas == "season 4" else "s05" if seas == "season 5" else "s06" if seas == "season 6" else "s07" if seas == "season 7" else "s08" if seas == "season 8" else "s09" if seas == "season 9" else "s10" if seas == "season 10" else ""
+    search1 = f"{search1} {seas1}"
+    BUTTONS1[key] = search1
+    files1, offset, total_results = await get_search_results(chat_id, search1, offset=0, filter=True)
+    files1 = [file for file in files1 if re.search(seas1, file.file_name, re.IGNORECASE)]
+    
+    if files1:
+        files.extend(files1)
+    
+    seas2 = "season 01" if seas == "season 1" else "season 02" if seas == "season 2" else "season 03" if seas == "season 3" else "season 04" if seas == "season 4" else "season 05" if seas == "season 5" else "season 06" if seas == "season 6" else "season 07" if seas == "season 7" else "season 08" if seas == "season 8" else "season 09" if seas == "season 9" else "s010"
+    search2 = f"{search2} {seas2}"
+    BUTTONS2[key] = search2q    
+    files2, offset, total_results = await get_search_results(chat_id, search2, offset=0, filter=True)
+    files2 = [file for file in files2 if re.search(seas2, file.file_name, re.IGNORECASE)]
+
+    if files2:
+        files.extend(files2)
+        
     if not files:
         await query.answer(f"sᴏʀʀʏ, ɴᴏ ғɪʟᴇs ғᴏᴜɴᴅ ғᴏʀ ʏᴏᴜʀ ᴏ̨ᴜᴇʀʏ {search}", show_alert=1)
         return
