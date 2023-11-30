@@ -5,6 +5,9 @@ import ast
 import math
 import random
 import pytz
+import datetime
+import time
+import psutil, shutil, sys
 from datetime import datetime, timedelta, date, time
 lock = asyncio.Lock()
 
@@ -18,7 +21,7 @@ from info import ADMINS, AUTH_CHANNEL, AUTH_USERS, NOR_IMG, SUPPORT_CHAT_ID, CUS
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery, InputMediaPhoto
 from pyrogram import Client, filters, enums
 from pyrogram.errors import FloodWait, UserIsBlocked, MessageNotModified, PeerIdInvalid
-from utils import get_size, is_subscribed, get_poster, search_gagala, temp, get_settings, save_group_settings, get_bot_uptime, get_readable_time, get_shortlink, get_tutorial, send_all, get_cap
+from utils import get_size, is_subscribed, humanbytes, get_poster, search_gagala, temp, get_settings, save_group_settings, get_bot_uptime, get_readable_time, get_shortlink, get_tutorial, send_all, get_cap
 from database.users_chats_db import db
 from database.ia_filterdb import Media, get_file_details, get_search_results, get_bad_files
 from database.filters_mdb import (
@@ -43,6 +46,7 @@ BUTTONS0 = {}
 BUTTONS1 = {}
 BUTTONS2 = {}
 SPELL_CHECK = {}
+BOT_START_TIME = time.time()
 # ENABLE_SHORTLINK = ""
 
 @Client.on_message(filters.group & filters.text & filters.incoming)
@@ -1263,6 +1267,17 @@ async def cb_handler(client: Client, query: CallbackQuery):
     elif query.data == "info":
         await query.answer(text=script.INFO, show_alert=True)
 
+    elif query.data == "statx":
+        currentTime = time.strftime("%Hh%Mm%Ss", time.gmtime(time.time() - BOT_START_TIME))
+        total, used, free = shutil.disk_usage(".")
+        total = humanbytes(total)
+        used = humanbytes(used)
+        free = humanbytes(free)
+        cpu_usage = psutil.cpu_percent()
+        ram_usage = psutil.virtual_memory().percent
+        disk_usage = psutil.disk_usage('/').percent
+        await query.answer(f"⚡️ Sʏsᴛᴇᴍ Sᴛᴀᴛᴜs ⚡️\n\n❂ Uᴘᴛɪᴍᴇ : {currentTime}\n✇ Cᴘᴜ : {cpu_usage}\n✪ Rᴀᴍ : {ram_usage}\n✼ Tᴏᴛᴀʟ Dɪsᴋ : {total}\n❐ Usᴇᴅ Sᴘᴀᴄᴇ : {used} ({disk_usage}%)\n❦ Fʀᴇᴇ Sᴘᴀᴄᴇ : {free}\n\nᴠ2.9.1 [sᴛᴀʙʟᴇ]", show_alert=True)    
+
     elif query.data == "start":
         buttons = [[
                     InlineKeyboardButton('➕ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ➕', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
@@ -1325,8 +1340,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('ʀᴜʟᴇs', callback_data='rule_btn'),          
             InlineKeyboardButton('sᴇᴛᴛɪɴɢs', callback_data='setting_btn')
         ], [
-            InlineKeyboardButton('⇚ ʙᴀᴄᴋ', callback_data='start'),
-            InlineKeyboardButton("🚫 ᴅᴍᴄᴀ", url="https://telegra.ph/Contant-RemovalDMCA-07-30")
+            InlineKeyboardButton('⇚ ʙᴀᴄᴋ ᴛᴏ ʜᴏᴍᴇ ⇛', callback_data='start')            
         ]]        
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
