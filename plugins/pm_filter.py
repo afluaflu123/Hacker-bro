@@ -581,7 +581,7 @@ async def seasons_cb_handler(client: Client, query: CallbackQuery):
 
 @Client.on_callback_query(filters.regex(r"^fs#"))
 async def filter_seasons_cb_handler(client: Client, query: CallbackQuery):
-    _, seas, key = query.data.split("#")
+    _, seas, key, offset = query.data.split("#")
     curr_time = datetime.now(pytz.timezone('Asia/Kolkata')).time()
     search = FRESH.get(key)
     search = search.replace("_", " ")
@@ -601,10 +601,7 @@ async def filter_seasons_cb_handler(client: Client, query: CallbackQuery):
     message = query.message
     try:
         if int(req) not in [query.message.reply_to_message.from_user.id, 0]:
-            return await query.answer(
-                f"⚠️ ʜᴇʟʟᴏ{query.from_user.first_name},\nᴛʜɪꜱ ɪꜱ ɴᴏᴛ ʏᴏᴜʀ ᴍᴏᴠɪᴇ ʀᴇQᴜᴇꜱᴛ,\nʀᴇQᴜᴇꜱᴛ ʏᴏᴜʀ'ꜱ...",
-                show_alert=True,
-            )
+            return await query.answer(script.ALRT_TXT.format(query.from_user.first_name),show_alert=True)
     except:
         pass
 
@@ -650,56 +647,38 @@ async def filter_seasons_cb_handler(client: Client, query: CallbackQuery):
             ]
             for file in files
         ]
-        btn.insert(0, 
-            [
-                InlineKeyboardButton("𑀉ᥲᥒgᥙᥲgᥱs", callback_data=f"languages#{key}"),
-                InlineKeyboardButton("𐍃ᥱᥲs᧐ᥒs", callback_data=f"seasons#{key}"),
-                InlineKeyboardButton("Fiᥣᥱ Qᥙᥲᥣiᴛy", callback_data=f"quality#{key}")
-            ]
-        )
         btn.insert(0, [
-            InlineKeyboardButton(f'⇓ {search} ⇓', 'qinfo'),
-            InlineKeyboardButton('sᴇɴᴅ ᴀʟʟ', callback_data=f"sendfiles#{key}")
+            InlineKeyboardButton("𐍃ᥱᥒɗ Aᥣᥣ Fiᥣᥱs", callback_data=f"sendfiles#{key}"),
+            InlineKeyboardButton("Fiᥣᥱ Qᥙᥲᥣiᴛy", callback_data=f"quality#{key}")
         ])
     else:
         btn = []
         btn.insert(0, 
             [
-                InlineKeyboardButton("𑀉ᥲᥒgᥙᥲgᥱs", callback_data=f"languages#{key}"),
-                InlineKeyboardButton("𐍃ᥱᥲs᧐ᥒs", callback_data=f"seasons#{key}"),
-                InlineKeyboardButton("Fiᥣᥱ Qᥙᥲᥣiᴛy", callback_data=f"quality#{key}")
+                InlineKeyboardButton(f'Sᴇʟᴇᴄᴛ ➢', 'select'),
+                InlineKeyboardButton("ʟᴀɴɢᴜᴀɢᴇs", callback_data=f"languages#{key}"),
+                InlineKeyboardButton("Sᴇᴀsᴏɴs",  callback_data=f"seasons#{key}")
             ]
         )
         btn.insert(0, [
-            InlineKeyboardButton(f'⇓ {search} ⇓', 'qinfo'),
-            InlineKeyboardButton(f'✇ Iᥒf᧐', 'info')
+            InlineKeyboardButton("Sᴛᴀʀᴛ Bᴏᴛ", url=f"https://telegram.me/{temp.U_NAME}"),
+            InlineKeyboardButton("𝐒𝐞𝐧𝐝 𝐀𝐥𝐥", callback_data=f"sendfiles#{key}")
         ])
+        
+    offset = 0
 
-    if offset != "":
-        try:
-            if settings['max_btn']:
-                btn.append(
-                    [InlineKeyboardButton("❐ Pᥲgᥱ", callback_data="pages"), InlineKeyboardButton(text=f"1/{math.ceil(int(total_results)/10)}",callback_data="pages"), InlineKeyboardButton(text="𐌽ᥱ᥊ᴛ ​⇛",callback_data=f"next_{req}_{key}_{offset}")]
-                )
-    
-            else:
-                btn.append(
-                    [InlineKeyboardButton("❐ Pᥲgᥱ", callback_data="pages"), InlineKeyboardButton(text=f"1/{math.ceil(int(total_results)/int(MAX_B_TN))}",callback_data="pages"), InlineKeyboardButton(text="𐌽ᥱ᥊ᴛ ​⇛",callback_data=f"next_{req}_{key}_{offset}")]
-                )
-        except KeyError:
-            await save_group_settings(query.message.chat.id, 'max_btn', True)
-            btn.append(
-                [InlineKeyboardButton("❐ Pᥲgᥱ", callback_data="pages"), InlineKeyboardButton(text=f"1/{math.ceil(int(total_results)/10)}",callback_data="pages"), InlineKeyboardButton(text="𐌽ᥱ᥊ᴛ ​⇛",callback_data=f"next_{req}_{key}_{offset}")]
-            )
-    else:
-        btn.append(
-            [InlineKeyboardButton(text="⎋ 𐌽᧐ 𐌑᧐rᥱ Pᥲgᥱs A᥎ᥲiᥣᥲδᥣᥱ ⎋",callback_data="pages")]
-        )
+    btn.append([
+            InlineKeyboardButton(
+                text="↭ ʙᴀᴄᴋ ᴛᴏ ꜰɪʟᴇs ​↭",
+                callback_data=f"next_{req}_{key}_{offset}"
+                ),
+    ])
     
     if not settings["button"]:
         cur_time = datetime.now(pytz.timezone('Asia/Kolkata')).time()
         time_difference = timedelta(hours=cur_time.hour, minutes=cur_time.minute, seconds=(cur_time.second+(cur_time.microsecond/1000000))) - timedelta(hours=curr_time.hour, minutes=curr_time.minute, seconds=(curr_time.second+(curr_time.microsecond/1000000)))
         remaining_seconds = "{:.2f}".format(time_difference.total_seconds())
+        total_results = len(files)
         cap = await get_cap(settings, remaining_seconds, files, query, total_results, search)
         try:
             await query.message.edit_text(text=cap, reply_markup=InlineKeyboardMarkup(btn), disable_web_page_preview=True)
@@ -707,9 +686,7 @@ async def filter_seasons_cb_handler(client: Client, query: CallbackQuery):
             pass
     else:
         try:
-            await query.edit_message_reply_markup(
-                reply_markup=InlineKeyboardMarkup(btn)
-            )
+            await query.edit_message_reply_markup(reply_markup=InlineKeyboardMarkup(btn))
         except MessageNotModified:
             pass
     await query.answer()
