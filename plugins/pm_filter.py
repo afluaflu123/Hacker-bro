@@ -581,7 +581,7 @@ async def seasons_cb_handler(client: Client, query: CallbackQuery):
 
 @Client.on_callback_query(filters.regex(r"^fs#"))
 async def filter_seasons_cb_handler(client: Client, query: CallbackQuery):
-    _, seas, key, offset = query.data.split("#")
+    _, seas, key = query.data.split("#")
     curr_time = datetime.now(pytz.timezone('Asia/Kolkata')).time()
     search = FRESH.get(key)
     search = search.replace("_", " ")
@@ -601,10 +601,13 @@ async def filter_seasons_cb_handler(client: Client, query: CallbackQuery):
     message = query.message
     try:
         if int(req) not in [query.message.reply_to_message.from_user.id, 0]:
-            return await query.answer(script.ALRT_TXT.format(query.from_user.first_name),show_alert=True)
+            return await query.answer(
+                f"⚠️ ʜᴇʟʟᴏ{query.from_user.first_name},\nᴛʜɪꜱ ɪꜱ ɴᴏᴛ ʏᴏᴜʀ ᴍᴏᴠɪᴇ ʀᴇQᴜᴇꜱᴛ,\nʀᴇQᴜᴇꜱᴛ ʏᴏᴜʀ'ꜱ...",
+                show_alert=True,
+            )
     except:
         pass
-
+    
     searchagn = search
     search1 = search
     search2 = search
@@ -633,7 +636,7 @@ async def filter_seasons_cb_handler(client: Client, query: CallbackQuery):
         files.extend(files2)
         
     if not files:
-        await query.answer(f"sᴏʀʀʏ, ɴᴏ ғɪʟᴇs ғᴏᴜɴᴅ ғᴏʀ ʏᴏᴜʀ ᴏ̨ᴜᴇʀʏ {search}", show_alert=1)
+        await query.answer("🚫 𝗡𝗼 𝗙𝗶𝗹𝗲 𝗪𝗲𝗿𝗲 𝗙𝗼𝘂𝗻𝗱 🚫", show_alert=1)
         return
     temp.GETALL[key] = files
     settings = await get_settings(message.chat.id)
@@ -649,7 +652,7 @@ async def filter_seasons_cb_handler(client: Client, query: CallbackQuery):
         ]
         btn.insert(0, [
             InlineKeyboardButton("𐍃ᥱᥒɗ Aᥣᥣ Fiᥣᥱs", callback_data=f"sendfiles#{key}"),
-            InlineKeyboardButton("Fiᥣᥱ Qᥙᥲᥣiᴛy", callback_data=f"quality#{key}")
+            InlineKeyboardButton("𐍃ᥱᥣᥱᥴᴛ Agᥲiᥒ", callback_data=f"seasons#{key}")
         ])
     else:
         btn = []
