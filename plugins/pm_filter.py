@@ -1971,23 +1971,20 @@ async def advantage_spell_chok(client, msg):
             return
         SPELL_CHECK[mv_id] = movielist
         reqst_gle = mv_rqst.replace(" ", "+")
-            button = [[
-                       InlineKeyboardButton("ɢᴏᴏɢʟᴇ", url=f"https://www.google.com/search?q={reqst_gle}"),
-                       InlineKeyboardButton("ɪᴍᴅʙ", url=f"https://www.imdb.com/find/?q={reqst_gle}_=nv_sr_sm")     
-                   ],[
-                      InlineKeyboardButton("ʟᴀɴɢᴜᴀɢᴇs ᴛᴏ ᴛʀᴀɴsʟᴀᴛᴇ", url=f"https://telegra.ph/Translate-To-Malayalam-11-20")            
-            ]]
-#            if NO_RESULTS_MSG:
-#                await client.send_message(chat_id=LOG_CHANNEL, text=(script.NORSLTS.format(reqstr.id, reqstr.mention, mv_rqst)))
-            k = await msg.reply_photo(
-                photo=SPELL_IMG, 
-                caption=script.I_CUDNT.format(mv_rqst),
-                reply_markup=InlineKeyboardMarkup(button)
-            )
-            await asyncio.sleep(100)
-            await k.delete()
-            await msg.delete()
-            return
+        btn = [[
+            InlineKeyboardButton("ɢᴏᴏɢʟᴇ", url=f"https://www.google.com/search?q={reqst_gle}"),
+            InlineKeyboardButton("ɪᴍᴅʙ", url=f"https://www.imdb.com/find/?q={reqst_gle}_=nv_sr_sm")     
+        ],[
+            InlineKeyboardButton("ʟᴀɴɢᴜᴀɢᴇs ᴛᴏ ᴛʀᴀɴsʟᴀᴛᴇ", url=f"https://telegra.ph/Translate-To-Malayalam-11-20")            
+        ]]
+        k = await msg.reply_photo(
+            photo=SPELL_IMG, 
+            caption=script.I_CUDNT.format(mv_rqst),
+            reply_markup=InlineKeyboardMarkup(btn)
+        )
+        await asyncio.sleep(100)
+        await k.delete()
+        await msg.delete()
     except:
         try:
             movies = await get_poster(mv_rqst, bulk=True)
@@ -2035,23 +2032,22 @@ async def advantage_spell_chok(client, msg):
         movielist += [f"{movie.get('title')} {movie.get('year')}" for movie in movies]
         SPELL_CHECK[mv_id] = movielist
         reqst_gle = mv_rqst.replace(" ", "+")
-            button = [[
-                       InlineKeyboardButton("ɢᴏᴏɢʟᴇ", url=f"https://www.google.com/search?q={reqst_gle}"),
-                       InlineKeyboardButton("ɪᴍᴅʙ", url=f"https://www.imdb.com/find/?q={reqst_gle}_=nv_sr_sm")     
-                   ],[
-                      InlineKeyboardButton("ʟᴀɴɢᴜᴀɢᴇs ᴛᴏ ᴛʀᴀɴsʟᴀᴛᴇ", url=f"https://telegra.ph/Translate-To-Malayalam-11-20")            
-            ]]
-#            if NO_RESULTS_MSG:
-#                await client.send_message(chat_id=LOG_CHANNEL, text=(script.NORSLTS.format(reqstr.id, reqstr.mention, mv_rqst)))
-            k = await msg.reply_photo(
-                photo=SPELL_IMG, 
-                caption=script.I_CUDNT.format(mv_rqst),
-                reply_markup=InlineKeyboardMarkup(button)
-            )
-            await asyncio.sleep(100)
-            await k.delete()
-            await msg.delete()
-            return
+        btn = [[
+            InlineKeyboardButton("ɢᴏᴏɢʟᴇ", url=f"https://www.google.com/search?q={reqst_gle}"),
+            InlineKeyboardButton("ɪᴍᴅʙ", url=f"https://www.imdb.com/find/?q={reqst_gle}_=nv_sr_sm")     
+        ],[
+            InlineKeyboardButton("ʟᴀɴɢᴜᴀɢᴇs ᴛᴏ ᴛʀᴀɴsʟᴀᴛᴇ", url=f"https://telegra.ph/Translate-To-Malayalam-11-20")            
+        ]]
+        k = await msg.reply_photo(
+            photo=SPELL_IMG, 
+            caption=script.I_CUDNT.format(mv_rqst),
+            reply_markup=InlineKeyboardMarkup(btn)
+        )
+        await asyncio.sleep(100)
+        await k.delete()
+        await msg.delete()
+        return
+        
 
 async def manual_filters(client, message, text=False):
     group_id = message.chat.id
