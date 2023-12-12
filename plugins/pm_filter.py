@@ -1912,7 +1912,7 @@ async def advantage_spell_chok(client, msg):
             reqst_gle = query.replace(" ", "+")
             button = [[
                        InlineKeyboardButton("ɢᴏᴏɢʟᴇ", url=f"https://www.google.com/search?q={reqst_gle}"),
-                       InlineKeyboardButton("ɪᴍᴅʙ", url=f"https://www.imdb.com/find/?q={reqst_gle}_=nv_sr_sm")     
+                       InlineKeyboardButton("ɪᴍᴅʙ", url=f"https://www.imdb.com/find/?q={reqst_gle}&ref_=nv_sr_sm")     
                    ],[
                       InlineKeyboardButton("ʟᴀɴɢᴜᴀɢᴇs ᴛᴏ ᴛʀᴀɴsʟᴀᴛᴇ", url=f"https://telegra.ph/Translate-To-Malayalam-11-20")            
             ]]
@@ -1954,7 +1954,7 @@ async def advantage_spell_chok(client, msg):
             reqst_gle = query.replace(" ", "+")
             button = [[
                       InlineKeyboardButton("ɢᴏᴏɢʟᴇ", url=f"https://www.google.com/search?q={reqst_gle}"),
-                      InlineKeyboardButton("ɪᴍᴅʙ", url=f"https://www.imdb.com/find/?q={reqst_gle}_=nv_sr_sm")     
+                      InlineKeyboardButton("ɪᴍᴅʙ", url=f"https://www.imdb.com/find/?q={reqst_gle}&ref_=nv_sr_sm")     
                    ],[
                       InlineKeyboardButton("ʟᴀɴɢᴜᴀɢᴇs ᴛᴏ ᴛʀᴀɴsʟᴀᴛᴇ", url=f"https://telegra.ph/Translate-To-Malayalam-11-20")            
             ]]
@@ -1973,7 +1973,7 @@ async def advantage_spell_chok(client, msg):
         reqst_gle = mv_rqst.replace(" ", "+")
         btn = [[
             InlineKeyboardButton("ɢᴏᴏɢʟᴇ", url=f"https://www.google.com/search?q={reqst_gle}"),
-            InlineKeyboardButton("ɪᴍᴅʙ", url=f"https://www.imdb.com/find/?q={reqst_gle}_=nv_sr_sm")     
+            InlineKeyboardButton("ɪᴍᴅʙ", url=f"https://www.imdb.com/find/?q={reqst_gle}&ref_=nv_sr_sm")     
         ],[
             InlineKeyboardButton("ʟᴀɴɢᴜᴀɢᴇs ᴛᴏ ᴛʀᴀɴsʟᴀᴛᴇ", url=f"https://telegra.ph/Translate-To-Malayalam-11-20")            
         ]]
@@ -1993,7 +1993,7 @@ async def advantage_spell_chok(client, msg):
             reqst_gle = mv_rqst.replace(" ", "+")
             button = [[
                        InlineKeyboardButton("ɢᴏᴏɢʟᴇ", url=f"https://www.google.com/search?q={reqst_gle}"),
-                       InlineKeyboardButton("ɪᴍᴅʙ", url=f"https://www.imdb.com/find/?q={reqst_gle}_=nv_sr_sm")     
+                       InlineKeyboardButton("ɪᴍᴅʙ", url=f"https://www.imdb.com/find/?q={reqst_gle}&ref_=nv_sr_sm")     
                    ],[
                       InlineKeyboardButton("ʟᴀɴɢᴜᴀɢᴇs ᴛᴏ ᴛʀᴀɴsʟᴀᴛᴇ", url=f"https://telegra.ph/Translate-To-Malayalam-11-20")            
             ]]
@@ -2013,7 +2013,7 @@ async def advantage_spell_chok(client, msg):
             reqst_gle = mv_rqst.replace(" ", "+")
             button = [[
                        InlineKeyboardButton("ɢᴏᴏɢʟᴇ", url=f"https://www.google.com/search?q={reqst_gle}"),
-                       InlineKeyboardButton("ɪᴍᴅʙ", url=f"https://www.imdb.com/find/?q={reqst_gle}_=nv_sr_sm")     
+                       InlineKeyboardButton("ɪᴍᴅʙ", url=f"https://www.imdb.com/find/?q={reqst_gle}&ref_=nv_sr_sm")     
                    ],[
                       InlineKeyboardButton("ʟᴀɴɢᴜᴀɢᴇs ᴛᴏ ᴛʀᴀɴsʟᴀᴛᴇ", url=f"https://telegra.ph/Translate-To-Malayalam-11-20")            
             ]]
@@ -2034,7 +2034,7 @@ async def advantage_spell_chok(client, msg):
         reqst_gle = mv_rqst.replace(" ", "+")
         btn = [[
             InlineKeyboardButton("ɢᴏᴏɢʟᴇ", url=f"https://www.google.com/search?q={reqst_gle}"),
-            InlineKeyboardButton("ɪᴍᴅʙ", url=f"https://www.imdb.com/find/?q={reqst_gle}_=nv_sr_sm")     
+            InlineKeyboardButton("ɪᴍᴅʙ", url=f"https://www.imdb.com/find/?q={reqst_gle}&ref_=nv_sr_sm")     
         ],[
             InlineKeyboardButton("ʟᴀɴɢᴜᴀɢᴇs ᴛᴏ ᴛʀᴀɴsʟᴀᴛᴇ", url=f"https://telegra.ph/Translate-To-Malayalam-11-20")            
         ]]
